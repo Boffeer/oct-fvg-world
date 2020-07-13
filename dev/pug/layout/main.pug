@@ -1,0 +1,44 @@
+include ../mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+
+		link(rel="stylesheet" type='text/css' href="static/css/main.css")
+		//- link(rel="stylesheet" type='text/css' href="static/css/slick.css")
+		//- link(rel="stylesheet" type='text/css' href="static/css/slick-theme.css")
+
+		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet")
+
+		link( rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+		
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css")
+			
+		link( rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+		<!--[if lt IE 9]>
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		<![endif]-->
+	body(class=pageClass)
+		.wrapper
+			include ../modules/header
+			.content
+				block content
+				include ../modules/form
+				
+			include ../modules/footer
+		script(src="static/js/jquery.js")
+		script(src="static/js/libs.min.js")
+		script(src="static/js/main.js")
+		//- script(src="static/js/slick.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js")
+		script( src="https://unpkg.com/aos@next/dist/aos.js")
+		block script
