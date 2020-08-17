@@ -13,7 +13,7 @@ module.exports = function() {
 const {argv} = require('yargs')
 const content = ''
 
-$.gulp.task('new', () => {
+$.gulp.task('n', () => {
 	// let a = argv.name
 	// console.log(a)
 	// $.fs.writeFile('./build/{argv.name}.txt', content)
@@ -44,7 +44,8 @@ $.gulp.task('new', () => {
 		    return
 		  }
 		})
-
+		window.clipboardData.setData("Text", text);
+ 
 })
 
  
