@@ -5,7 +5,7 @@ module.exports = function () {
         // $.gulp.watch('./dev/static/css/**/*.css', $.gulp.series('css'));
         $.gulp.watch('./dev/static/img/svg/*.svg', $.gulp.series('svg'));
         $.gulp.watch('./dev/static/js/**/*.js', $.gulp.series('libsJS:dev', 'js:copy'));
-        $.gulp.watch(['./dev/static/img/general/**/*.{png,jpg,gif}',
-                     './dev/static/img/content/**/*.{png,jpg,gif}'], $.gulp.series('img:dev'));
+        $.gulp.watch(['./dev/static/img/general/**/*.{png,jpg,gif,webp,svg}',
+                     './dev/static/img/content/**/*.{png,jpg,gif,webp,svg}'], $.gulp.series('img:dev'));
     });
 };

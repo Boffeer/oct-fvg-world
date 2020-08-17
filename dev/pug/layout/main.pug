@@ -13,32 +13,38 @@ html(lang="ru-RU")
 		meta(name="keywords" content="")
 
 		link(rel="stylesheet" type='text/css' href="static/css/main.css")
-		//- link(rel="stylesheet" type='text/css' href="static/css/slick.css")
-		//- link(rel="stylesheet" type='text/css' href="static/css/slick-theme.css")
 
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet")
 
 		link( rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
 		
-		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css")
-		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css")
+
 			
-		link( rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css")
+
 		<!--[if lt IE 9]>
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
 		<![endif]-->
+
 	body(class=pageClass)
 		.wrapper
 			include ../modules/header
 			.content
 				block content
-				include ../modules/form
+				//- include ../modules/form
 				
 			include ../modules/footer
-		script(src="static/js/jquery.js")
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js')
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js')
+
+		//- script(src="static/js/jquery.js")
 		script(src="static/js/libs.min.js")
 		script(src="static/js/main.js")
-		//- script(src="static/js/slick.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js")
-		script( src="https://unpkg.com/aos@next/dist/aos.js")
+
 		block script

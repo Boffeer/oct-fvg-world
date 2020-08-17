@@ -9,8 +9,20 @@ module.exports = function () {
             }))
             .pipe($.gp.csscomb())
             .pipe($.gp.csso())
+
+            .pipe($.gp.criticalCss())
+
+            .pipe($.gp.uncss({
+                html: ['./build/index.html']
+            }))
+
             .pipe($.gulp.dest('./build/static/css/'))
     });
+
+    // $.gulp.task('cssmod', () => {
+    //     return $.gulp.src('./build/static/css/**')
+    //         .pipe($.gp.csscomb())
+    // })
 
     $.gulp.task('styles:dev', () => {
         return $.gulp.src('./dev/static/stylus/main.styl')

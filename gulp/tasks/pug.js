@@ -8,6 +8,9 @@ module.exports = function() {
                 },
                 pretty: true
             }))
+
+            // .pipe($.gp.htmlmin({collapseWhitespace: true }))
+
             .on('error', $.gp.notify.onError(function(error) {
                 return {
                     title: 'Pug',

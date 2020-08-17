@@ -23,4 +23,17 @@ module.exports = function() {
                 stream: true
             }));
     });
+
+    $.gulp.task('js:dev', () => {
+        return $.gulp.src(['./dev/static/js/*.js', '!./dev/static/js/slick.min.js', '!./dev/static/js/jquery.js'])
+        .pipe($.gp.concat('main.js'))
+        .pipe($.gulp.dest('./build/static/js/'))
+    })
+
+    $.gulp.task('js:build', () => {
+        return $.gulp.src(['./dev/static/js/*.js', '!./dev/static/js/slick.min.js', '!./dev/static/js/jquery.js'])
+        .pipe($.gp.concat('main.js'))
+        .pipe($.gp.uglifyjs())
+        .pipe($.gulp.dest('./build/static/js/'))
+    })
 };
