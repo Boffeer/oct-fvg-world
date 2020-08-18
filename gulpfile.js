@@ -20,7 +20,7 @@ $.gulp.task('dev', $.gulp.series(
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles:build', 'pug', 'libsJS:build', 'js:build', 'svg', 'webp:build', 'fonts','svg:copy', 'textolite')));
+    $.gulp.parallel('styles:build', 'pug:build', 'libsJS:build', 'js:build', 'svg', 'webp:build', 'fonts','svg:copy', 'textolite')));
 
 $.gulp.task('default', $.gulp.series(
     'dev',
