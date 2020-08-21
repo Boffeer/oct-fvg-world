@@ -7,13 +7,20 @@ module.exports = function () {
             .pipe($.gp.autoprefixer({
                 browsers: ['last 3 version']
             }))
-            .pipe($.gp.csscomb())
-            .pipe($.gp.csso())
+            // .pipe($.gp.csscomb())
 
             .pipe($.gp.criticalCss())
 
+            .pipe($.gp.csso())
             .pipe($.gp.uncss({
-                html: ['./build/index.html']
+                html: ['./build/index.html'],
+                ignore: [
+                '.slick-next:before',
+                '.slick-prev:before',
+                'button.slick-arrow',
+                'li.slick-active',
+                '.slick-dots ',
+                ]
             }))
 
             .pipe($.gulp.dest('./build/static/css/'))

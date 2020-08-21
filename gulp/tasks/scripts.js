@@ -24,6 +24,7 @@ module.exports = function() {
             }));
     });
 
+
     $.gulp.task('js:dev', () => {
         return $.gulp.src(['./dev/static/js/main.js','./dev/static/js/*.js', '!./dev/static/js/slick.min.js', '!./dev/static/js/jquery.js'])
         .pipe($.gp.concat('main.js'))
@@ -32,24 +33,9 @@ module.exports = function() {
             presets: ['@babel/env']
         }))
 
-
-        // .pipe($.gp.eslint({
-        //     rules: {
-        //         strict: 2,
-        //     },
-        //     globals: [
-        //         'Jquery',
-        //         '$'
-        //     ],
-        //     envs: [
-        //         'browser'
-        //     ]
-        // }))
-        // .pipe($.gp.eslint.formatEach('compact'))
-
-
         .pipe($.gulp.dest('./build/static/js/'))
     })
+
 
     $.gulp.task('js:build', () => {
         return $.gulp.src(['./dev/static/js/*.js', '!./dev/static/js/slick.min.js', '!./dev/static/js/jquery.js'])
