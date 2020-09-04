@@ -16,11 +16,11 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('dev', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles:dev', 'pug', 'libsJS:dev', 'js:dev', 'svg', 'webp:dev', 'php', 'vendor', 'fonts','svg:copy')));
+    $.gulp.parallel('styles:dev', 'pug', 'libsJS:dev', 'js:dev', 'svg', 'webp:dev', 'php', 'fonts','svg:copy')));
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles:build', 'pug:build', 'libsJS:build', 'js:build', 'svg', 'webp:build', 'fonts','svg:copy', 'textolite')));
+    $.gulp.parallel('styles:build', 'pug:build', 'libsJS:build', 'js:build', 'svg', 'webp:build', 'fonts', 'vendor', 'svg:copy', 'textolite')));
 
 $.gulp.task('default', $.gulp.series(
     'dev',

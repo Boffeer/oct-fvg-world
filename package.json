@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
+    "gulp-rezzy": "^0.4.0",
     "normalize.css": "^7.0.0",
     "svg4everybody": "^2.1.8"
   }
