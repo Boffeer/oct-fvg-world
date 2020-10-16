@@ -1,0 +1,34 @@
+section.form
+	.container
+		form(action="static/php/contact.php").form-content
+			.form-left
+				h2.form_title Заполните бриф и <span>получите скидку 50%</span> на консультацию по вашему проекту/услуге
+				img(src="static/img/6-brief/brief-normal.webp").form_pic
+			.form-right
+				.form-contacts
+					input.g-input(
+						name="name"
+						required
+						placeholder="Имя"
+					)
+					input.g-input(
+						name="contact"
+						required
+						placeholder="Любой удобный контакт"
+					)
+				textarea.g-input.g-textarea(
+					required
+					placeholder="Расскажите о своем товаре или услуге"
+				)
+				textarea.g-input.g-textarea(
+					required
+					placeholder="Продвигаете ли свою услугу? Если да, то как и где?"
+				)
+				textarea.g-input.g-textarea(
+					required
+					placeholder="Откуда вы и чего бы хотели от нашего сотрудрничества"
+				)
+				.form-buttons
+					button.g-primary-btn.form-submit
+						span Отправить
+					+gdpr("Отправить")

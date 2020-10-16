@@ -1,0 +1,71 @@
+.exp
+	padding-top 100px
+	padding-bottom 150px
+	display flex
+	flex-wrap wrap
+	&-title
+		font-size: f-microtitle
+		font-weight: normal
+		margin-bottom 124px
+		margin-left 124px
+		max-width 600px
+		line-height: 200%;
+
+	.microtitle
+		color clr-second
+		font-size 24px
+		font-weight 900
+		margin-bottom 10px
+
+	&-bullets
+		display flex
+		justify-content center
+		align-items center
+		flex-wrap wrap
+
+	&-bullet
+		display flex
+		justify-content center
+		align-items center
+		flex-direction column
+
+		padding 58px 68px
+		margin 0 26px 36px 0
+		min-width 332px
+		max-width 377px
+		min-height 333px
+
+
+		background-color c-surface
+		border-radius 12px
+		shade()
+
+
+	&__img
+		align-self center
+		margin-bottom 16px
+		// width 50px
+		// height 50px
+
+	&__descr
+		text-align center
+		font-weight: 600
+
+
+.microtitle
+	color c-second
+
+@media(max-width 736px)
+	.exp
+		justify-content center
+		&-title
+			margin-left 0
+			max-width 100%
+			font-size: 20px
+			padding 0 17px
+			margin-bottom 40px
+		&-bullet
+			margin-right 0
+			margin-bottom 40px
+			width 80%
+			margin-left 0

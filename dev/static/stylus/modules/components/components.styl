@@ -1,0 +1,188 @@
+// rolling-title
+
+.rolling-title
+	margin-bottom 90px
+	&__item
+		font-size 70px
+		font-weight 900
+		margin-right 26px
+		margin-bottom 0 !important
+		color: c-bg;
+		max-width 100%
+		text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+.rolling-title-row--1
+.rolling-title-row--2
+.rolling-title-row--3
+	width 1000vw
+	overflow hidden
+	transition all 0.3s ease
+
+.rolling-title__item
+	f-rolling-title()
+	display inline-block
+	margin-right 26px
+
+.title-row-2
+	position relative
+	left -50%
+	// transform: translate(-50%);
+
+@media (max-width 480px)
+	.rolling-title__item
+		font-size 32px
+	.title-row-2
+		left -300%
+	.title-row-1
+	.title-row-2
+	.title-row-3
+		width 2000vw
+
+@media (max-width 1260px) and (min-width 481px)
+	.title-row-2
+		left -300%
+	.title-row-1
+	.title-row-2
+	.title-row-3
+		width 2000vw
+
+
+
+
+// card
+.card
+	position relative
+	width 32%
+	max-width 402px
+
+	background-color c-surface
+	border-radius 12px
+
+	padding-top 54px
+	padding-bottom 54px
+	margin-bottom 36px
+	shade()
+
+.card-number
+	f-important-bold()
+	color c-second
+	text-align center
+
+.card-img
+	display inline-flex
+	max-width 100%
+	object-fit cover
+	img
+		width 100%
+		object-fit contain
+.card-text
+	text-align center
+	max-width 266px
+	margin 0 auto
+
+.prephrase-stats
+	.card-img
+		display flex
+		justify-content center
+		width 100%
+		max-height 115px
+		margin-bottom 10px
+		margin-bottom 26px
+		*
+			max-height 115px
+			width auto
+
+.service
+	.card-img
+		max-height 215px
+		.img-loading
+			margin-bottom 26px
+		*[src*='1']
+			width 63px
+			margin-left auto
+			margin-right auto
+
+@media (max-width 480px)
+	.card
+		width 90%
+		margin-left auto
+		margin-right auto
+		padding-top 34px
+		padding-bottom 34px
+
+	.gdpr
+		width 100% !important
+		font-size 12px !important
+		a
+			font-size 12px !important
+
+
+// case
+.case
+	max-width 617px
+	background-color c-surface
+	display inline-flex
+	shade()
+	overflow-y hidden
+	border-radius 12px
+	p
+		color c-f-secondary
+
+.case-pic
+	align-self flex-start
+.case-number
+	font-weight 600
+.case-text
+	padding 57px 67px
+
+.case-title
+	margin-bottom 26px
+	color c-second
+	font-weight 900
+
+.case-stats
+	margin-bottom 16px
+
+.case-row
+	display inline-flex
+	align-items baseline
+	margin-bottom 	6px
+	p
+		margin-right 10px
+
+.case-descr
+	margin-bottom 26px
+
+
+
+// testimonial
+.testimonial
+	max-width 617px
+	background-color c-surface
+	border-radius 12px
+	shade()
+
+.testimonial-pic
+	height 317px
+	position relative
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 53.12%, rgba(0, 0, 0, 0.05) 76.04%, rgba(0, 0, 0, 0.4) 100%)
+
+.testimonial-person
+	position absolute
+	bottom 20px
+	left 68px
+
+.testimonial-text
+	padding 57px 67px
+
+.hero-fullscreen-menu-socials__item:hover
+	*
+		stroke none
+		fill c-prim
+
+
+.gdpr
+	font-size 12px
+	flex-basis 60%
+	*
+		font-size inherit

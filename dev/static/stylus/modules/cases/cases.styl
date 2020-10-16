@@ -1,0 +1,54 @@
+.cases
+	padding-bottom s2x
+
+.cases-wrap
+	padding-bottom 10px
+
+.case-slide-wrap
+	padding-right 30px
+.case-modal_wrap
+	display none
+	position fixed
+	left 0
+	top 0
+	width 100vw
+	height 100vh
+	background-color rgba(0,0,0,0.6)
+	z-index 500
+.case-modal
+	max-width 800px
+	padding 62px
+	margin 0 auto
+	background-color c-surface
+	border-radius 12px
+
+	&_title
+		color c-f
+	&_text
+		color c-f
+
+.case-wrap
+	margin-bottom 25px
+
+.cases-content
+	padding-left 100px
+	padding-right 10px
+
+@media (max-width 480px)
+	.cases-content
+		padding-left 10px
+		padding-right 10px
+	.case-pic
+		display none
+	.case-text
+		padding 27px 37px
+	.case-row
+		margin-bottom 10px
+		display flex
+		flex-direction column
+
+
+@media (min-width 1600px)
+	.cases-content
+		padding-left 150px
+		padding-right 100px

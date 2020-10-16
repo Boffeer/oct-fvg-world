@@ -1,0 +1,86 @@
+.bonus .container
+	display flex
+	justify-content center
+	align-items center
+	position relative
+
+.bonus-content
+	max-width 574px
+	padding 50px 60px
+	background-color c-surface
+	border-radius 12px
+	shade()
+	margin-bottom 120px
+
+.bonus_title
+	color c-second
+	font-size 28px
+	font-weight 900
+	margin-bottom 20px
+
+.bonus_text span
+	font-weight 900
+	color c-second
+
+.bonus_text a
+	color c-second
+
+.bonus_text:nth-child(3)
+	margin-bottom 20px
+
+.bonus_text:nth-child(4)
+	margin-bottom 20px
+
+
+.bonus-buttons
+	display flex
+	flex-direction column
+	align-items flex-start
+.bonus-btn
+	padding 20px 45px
+	margin-right 26px
+	flex-basis 60%
+	margin-bottom 20px
+
+.gdpr
+	opacity 0.6
+.gdpr a
+	color #fff
+	font-weight 600
+	margin-left 5px
+
+
+
+.bonus-img-1
+	position absolute
+	top 0
+	bottom 0
+	left -5%
+.bonus-img-2
+	position absolute
+	top -20%
+	bottom 0
+	right -6%
+.bonus-img-3
+	position absolute
+	top 20%
+	bottom 0
+	right -1%
+
+
+
+
+
+
+@media (max-width 480px)
+	.bonus-content
+		padding 25px
+	.bonus-buttons
+		align-items center
+	.bonus-btn
+		flex-basis 100%
+		margin-right 0 !important
+	.bonus-img-1
+	.bonus-img-2
+	.bonus-img-3
+		display none

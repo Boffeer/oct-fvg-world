@@ -17,11 +17,11 @@ html(lang="ru-RU")
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet")
 
 		link( rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
-		
+
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css")
 
-			
+
 		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css")
 
 		<!--[if lt IE 9]>
@@ -33,7 +33,20 @@ html(lang="ru-RU")
 			include ../modules/header
 			.content
 				block content
-				//- include ../modules/form
+				include ../modules/hero
+				include ../modules/results
+				include ../modules/services
+				include ../modules/exp
+				include ../modules/counter
+				include ../modules/work
+				include ../modules/brief
+				include ../modules/cases
+				include ../modules/comfort2
+				include ../modules/reviews
+				include ../modules/form
+				include ../modules/bonus
+				include ../modules/footer-slider
+				include ../modules/modals
 			include ../modules/footer
 
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
@@ -43,6 +56,7 @@ html(lang="ru-RU")
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js')
 
 		//- script(src="static/js/jquery.js")
+		script(src="static/js/confetti.min.js")
 		script(src="static/js/libs.min.js")
 		script(src="static/js/main.js")
 

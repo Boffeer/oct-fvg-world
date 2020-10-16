@@ -1,0 +1,59 @@
+.title-rows
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	overflow hidden
+	max-width 100%
+	position relative
+	margin-bottom s2x
+.title-row
+	// position absolute
+	// top 0
+	// right 0
+	// bottom 0
+	// left 0
+	// margin auto
+	&--1
+	&--2
+	&--3
+		display flex
+		width auto
+		justify-content space-between
+
+	.section-title
+		font-size 70px
+		margin-right 26px
+		margin-bottom 0 !important
+		color: c-bg;
+		max-width 100%
+		text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+		&--c
+			color clr-f
+			text-shadow none
+	&--3
+		margin-left 200px
+
+	&--1
+		margin-right: 300px
+
+.comfort-title
+	margin-right 26px
+	margin-bottom 0 !important
+	color: c-bg;
+	max-width 100%
+	text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+
+@media(max-width 768px)
+	.title-rows
+		margin-bottom s2
+	.title-row
+		.section-title
+			font-size 25px
+			margin-right 10px
+
+
+.section-title--c
+	color #fff
+

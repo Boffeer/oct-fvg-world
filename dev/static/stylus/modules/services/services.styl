@@ -1,0 +1,74 @@
+.services
+	&-item
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		align-items center
+		max-width 1000px
+		margin-bottom 62px
+	&-items
+		display flex
+		flex-wrap wrap
+		justify-content center
+
+	&-card
+		max-width 582px
+		padding 58px 68px
+
+		background-color: c-surface
+
+		border-radius 16px 0 0 16px
+		box-shadow: 0px 0px 34px rgba(237, 40, 40, 0.36), 124px 0px 34px rgba(237, 40, 40, 0.13);
+
+		&__name
+			font-size f-minititle
+			color c-second
+			font-weight: 900
+			margin-bottom 42px
+
+		&__descr
+			margin-bottom 42px
+			// word-break: break-all;
+			// max-height 350px
+			span
+				color c-second
+				font-weight: bold
+	&-item:nth-child(even)
+		flex-direction: row-reverse;
+		.services-card
+			border-radius 0 16px 16px 0
+			box-shadow: -0px -0px 34px rgba(237, 40, 40, 0.36), -124px -0px 34px rgba(237, 40, 40, 0.13);
+
+	&-pic
+		max-height 480px
+
+
+
+
+
+@media(max-width 736px)
+	.services
+		&-item
+			flex-direction column
+			max-width 100%
+		&-item:nth-child(even)
+			flex-direction: column;
+		&-card
+			padding 30px 35px
+			order 2
+			box-shadow: 0px -26px 68px rgba(237, 40, 40, 0.34);
+			&__name
+				font-size: 24px
+			&--7
+				.services-card__name
+					color clr-bg--d
+
+		&-pic
+			width 80%
+
+		.slick-slide
+			margin: 0 16px !important
+

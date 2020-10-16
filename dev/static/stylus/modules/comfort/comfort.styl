@@ -1,0 +1,136 @@
+.comfort
+	h2
+		font-size: 40px
+	&-list
+		display flex
+		justify-content space-between
+		flex-wrap wrap
+		padding-top s2
+
+	&__pic
+		width 145px !important
+		height 178px
+		flex-align flex-end
+		background-color c-second
+		border-radius 12px 0 0 12px
+	&-item
+		max-width 582px
+		shade()
+		border-radius 16px
+		margin-bottom 62px
+		display flex
+
+		&--2
+			img
+				width 100%
+				border-radius 16px 0 0 16px
+
+		&--3
+			align-self flex-end
+			.comfort-pic
+			.comfort__pic
+				display block
+				min-width 145px
+				// width 290px !important
+				height 314px
+				// background-image url('../img/content/comfort/3.png')
+				background-size cover
+				align-self flex-end
+				background-color transparent
+
+		// &--1
+		// 	display block
+		// 	background-image url('../img/content/comfort/1-d.png')
+		// 	background-size cover
+		// 	background-position center center
+		// 	border-radius 16px 0 0 16px
+		// 	height 206px
+		// &--2
+		// 	display block
+		// 	background-image url('../img/content/comfort/justice.jpg')
+		// 	background-size cover
+		// 	background-position center center
+		// 	border-radius 16px 0 0 16px
+		// &--4
+		// 	display block
+		// 	background-image url('../img/content/comfort/eye.png')
+		// 	background-size cover
+		// 	background-position center center
+		// 	border-radius 16px 0 0 16px
+		// 	min-width 145px
+		// 	height 100%
+	&-pic
+		width 145px
+		&--3
+			position relative
+			height 296px
+			&:after
+				position absolute
+				content ''
+				display block
+				background-image url('../img/content/comfort/3-1.png')
+				width 100px
+				height 100px
+		&--4
+			height 338px
+
+	&__text
+		padding 57px 42px 57px 46px
+		background-color: c-surface
+		align-self flex-end
+		border-radius 0 16px 16px 0
+.a-comfort-money
+	position absolute
+	top -80px
+	left 100px
+.comfort-item
+	position relative
+	span
+	a
+		color c-second
+	a
+		margin-left 5px
+		font-weight 600
+
+
+.comfort-item--4
+	img
+		height 90%
+		align-self flex-end
+
+@media(max-width 736px)
+	.comfort
+		h2
+			font-size 18px
+		&-list
+			max-width 100%
+			padding 17px
+			flex-direction column
+		&-item
+			flex-direction column
+			width 100% !important
+			.comfrot-pic
+				border-radius 16px 16px 0 0
+		&__text
+			padding 30px 40px
+			font-size 16px
+			border-radius 0 0 16px 16px
+		&__pic
+			display none
+			min-width 100%
+			height auto
+			border-radius 12px 12px 0 0
+
+		&-pic
+			width 100%
+
+	.comfort-item--1
+		.comfort__pic
+			display block
+			max-height 250px
+			object-fit cover
+	.comfort-item--3
+		.comfort__pic
+			display none
+
+

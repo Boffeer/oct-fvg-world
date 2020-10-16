@@ -1,0 +1,179 @@
+.card-hor--wrap
+	display flex
+	align-itmes flex-start
+	margin-bottom 62px
+.card-hor--wrap
+	&-2
+	&-4
+	&-6
+		flex-direction row-reverse
+		.card-hor
+			flex-direction row-reverse
+		.card-hor_text
+			padding-left 72px
+
+.card-hor
+	display flex
+	justify-content space-between
+	align-items center
+	max-width 715px
+	max-height 250px
+
+	background-color c-surface
+	border-radius 12px
+	shade()
+
+	&--1
+		position relative
+		.card-hor_img
+			position absolute
+			bottom 0
+			left 15%
+	&--2
+		position relative
+		flex-direction row-reverse
+		.card-hor_img
+			position absolute
+			right 15%
+			bottom 0
+	&--3
+		position relative
+		.card-hor_img
+			position absolute
+			bottom 50px
+			left 10%
+	&--4
+		position relative
+		.card-hor_img
+			position absolute
+			right 10%
+			bottom 0
+
+		.card-hor_text
+			min-width 480px
+	&--5
+		position relative
+		.card-hor_img
+			position absolute
+			left 10%
+			bottom 0
+
+	&--6
+		position relative
+		.card-hor_img
+			position absolute
+			right 0
+			bottom 0
+
+	&--7
+		position relative
+		.card-hor_img
+			position absolute
+			left 15%
+			bottom 0
+
+
+.card-hor_picture
+	max-height 250px
+.card-hor_arrow
+	width 20% !important
+	margin-top 124px
+	margin-left 62px
+	margin-right 62px
+// .card-hor_img
+// 	align-self: flex-end
+// 	max-height 100%
+
+.card-hor_text
+	min-width 300px
+	padding 89px 74px 89px 27px
+	font-size 18px
+
+
+@media (max-width 375px)
+	.card-hor--wrap
+		flex-direction column
+	.card-hor
+		flex-direction column
+		max-height 800px
+	.card-hor_text
+		padding-top 0
+		padding-bottom 40px
+	.card-hor--1 .card-hor_img
+		margin-left 250px
+	.card-hor
+		&--1
+			.card-hor_img
+				width 50%
+				left -50%
+				top -20%
+		&--2
+			.card-hor_img
+				width 40%
+				left -60%
+				top 10%
+		&--3
+			.card-hor_img
+				width 60%
+				left -40%
+				top 10%
+		&--4
+			.card-hor_img
+				width 40%
+				top -10%
+				left -55%
+		&--5
+			.card-hor_img
+				width 60%
+				left -60%
+				top 10%
+		&--6
+			flex-direction column !important
+			.card-hor_img
+				width 80%
+				top 10%
+				left -70%
+		&--7
+			.card-hor_img
+				width 50%
+				top -5%
+				left -40%
+		&--2
+			.card-hor_img
+				margin-left 300px
+		&--3
+			.card-hor_img
+				margin-left 200px
+		&--4
+			.card-hor_img
+				margin-left 300px
+		&--5
+			.card-hor_img
+				margin-left 280px
+		&--6
+			.card-hor_img
+				margin-left 289px
+			.card-hor_text
+				padding-top 23px
+		&--7
+			.card-hor_img
+				margin-left 219px
+			.card-hor_text
+				padding-top 23px
+		.card-hor_text
+			text-align center
+			padding-left 0
+			padding-right 0
+			margin-left 0
+			margin-right 0
+			min-width 100%
+	.card-hor_arrow
+		margin-top 62px
+		width 50% !important
+	.card-hor--wrap:nth-child(odd)
+		.card-hor_arrow
+			transform rotate(42deg) !important
+	.card-hor--wrap:nth-child(even)
+		.card-hor_arrow
+			transform rotate(-42deg) !important
+

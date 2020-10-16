@@ -1,1 +1,96 @@
-header
+section.hero
+	.c-hero-super-logo
+		svg(
+			viewbox='0 0 1920 1000',
+			 fill='none',
+			 xmlns='http://www.w3.org/2000/svg'
+			 )#hero-super-logo--desktop
+			path(d='M526 194.291V-5.70898H-4.66667L-8 1058.96H181.333V553.624H494.667V363.624H181.333V194.291H526Z', stroke='white', stroke-width='2')
+			path(d='M1382 1017.62V-10.375H1934.67V198.958C1790.43 198.698 1696.23 198.552 1552 198.292V824.292H1788.67V572.625H1659.33V435.292L1934.67 436.292V1017.62H1382Z', stroke='white', stroke-width='2')
+			path(d='M810 -9L965.333 755L1109.33 -22.3333L1312 -23L1102.67 1022.33H810', stroke='white', stroke-width='2')
+			path(d='M965.333 755L810 -9L607.333 -9.66667L810 1022.33H1102.67L1312 -23L1109.33 -22.3333L965.333 755Z', stroke='url(#paint0_linear)', stroke-width='2')
+			defs
+				lineargradient#paint0_linear(x1='732', y1='324.5', x2='809.5', y2='1085', gradientunits='userSpaceOnUse')
+					stop(offset='0.21875', stop-color='white')
+					stop(offset='0.489583', stop-color='white', stop-opacity='0')
+					stop(offset='0.682292', stop-color='white', stop-opacity='0')
+					stop(offset='0.893288', stop-color='white')
+
+		svg(width='394', height='187', viewbox='0 0 394 187', fill='none', xmlns='http://www.w3.org/2000/svg')#hero-super-logo--mobile
+			path(d='M109.201 41.0492V2.54102H3.67558L3 183.192H39.3463V113.066H99.4498V74.558H39.3463V41.0492H109.201Z', stroke='white', stroke-width='4')
+			path(d='M282.691 184.678V2.67578H392.001V41.0488L317.146 40.9137V145.494H365.112V104.824H338.63V76.9898H392.001V184.678H282.691Z', stroke='white', stroke-width='4')
+			path(d='M198.648 138.062L227.428 2.40671L268.5 2.40625L220.672 183.462L176.49 183.327L128.118 2.54194L169.464 2.5411L198.243 138.062', stroke='white', stroke-width='4')
+
+	.hero-container
+		.container
+			.hero-content
+				.offer
+					h1.headliner Создаю/продвигаю <br>онлайн-магазины <br>на Amazon и Ebay <br>с доходом от $3000
+					a(href="#start").hero-cta
+						img(src="static/img/general/cta.svg")
+
+		.hero-img
+
+		nav.hero-nav
+
+			button.hero-menu-btn(type="button")
+				<svg class="progress-ring" width="30" height="30">
+					<circle class="progress-ring__circle" stroke="white" stroke-width="4" cx="12" cy="12" r="15" fill="transparent"/>
+				</svg>
+			.hero-menu-hor
+				a.hero-menu__item(href="#") отзывы
+				a.hero-menu__item(href="#") кейсы
+			.hero-menu-ver
+				a.hero-menu__item(href="#") контакты
+				a.hero-menu__item(href="#") услуга
+
+		.hero-contacts
+			a.hero-phone(href="tel:+375124567890") +375 00 000 00 00
+			.hero-socials
+				a.hero-socilas__item.social--tg(href="#")
+					img(src="static/img/general/tg.svg" alt="")
+				a.hero-socilas__item.social--vk(href="#")
+					img(src="static/img/general/vk.svg" alt="")
+				a.hero-socilas__item.social--insta(href="#")
+					img(src="static/img/general/ig.svg" alt="")
+
+	.hero-fulscreen-menu-wrap
+		.hero-fulscreen-menu
+			.hero-fullscreen-menu-top
+				a.hero-fullscreen-menu__logo(href="")
+					img.menu-logo--mobile(src="static/img/general/colored-small-logo.svg" alt="fvg")
+					img.menu-logo--desktop(src="static/img/general/colored-big-logo.svg" alt="fvg")
+				button.g-secondary-btn.hero-fullscreen-menu__cta.menu-desktop_btn(type="button")
+					span Заказать звонок
+
+			ul.hero-fullscreen-menu-nav
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#services") Услуги
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#work") Этапы работы
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#form-consult") Заказать консультацию
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#cases") Кейсы
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#testimonials") Отзывы
+
+			.hero-fullscreen-menu-bottom
+				+socials({inst: 'https://instagram.com', vk: 'https://vk.com', fb: 'https://fb.com', tg: 'https://tg.com', whats: 'https://whatsapp.com'})
+				//- .hero-fullscreen-menu-socilas
+				//- 	a.hero-fullscreen-menu-socials__item.social--insta(href="")
+				//- 		img(src='static/img/general/ig.svg' alt="insta-link")
+				//- 	a.hero-fullscreen-menu-socials__item.social--vk(href="")
+				//- 		img(src='static/img/general/vk.svg' alt="vk-link")
+				//- 	a.hero-fullscreen-menu-socials__item.social--fb(href="")
+				//- 		img(src='static/img/general/fb.svg' alt="fb-link")
+				//- 	a.hero-fullscreen-menu-socials__item.social--tg(href="")
+				//- 		img(src='static/img/general/tg.svg' alt="tg-link")
+				//- 	a.hero-fullscreen-menu-socials__item.social--whats(href="")
+				//- 		img(src='static/img/general/wa.svg' alt="whatsapp-link")
+
+				.hero-fullscreen-menu-contacts
+					button.secondary-btn.hero-fullscreen-menu__cta.menu-mobile_btn(type="button")
+						span Заказать звонок
+					a.hero-fullscreen-menu-contacts__item.hero-fullscreen-menu-contacts--tel(href="+3751234562723") +375 000 000 00 00
+					a.hero-fullscreen-menu-contacts__item(href="mailtp:hello@fadeevgroup.com") hello@fadeevgroup.com
