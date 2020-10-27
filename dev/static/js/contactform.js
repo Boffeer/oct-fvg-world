@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-	$(".callback-form").submit(function () {
+	$("form").submit(function () {
 		var str = $(this).serialize();
 
 		$.ajax({
@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 			data: str,
 			success: function ()
 			{
-				
+
 			}
 		}
 		);

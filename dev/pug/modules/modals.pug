@@ -1,13 +1,14 @@
 .callback-pop_wrap
 	.callback-pop_inner
-		form(action="static/php/contact.php").callback-pop
+		form.callback-pop
 			button(type='button' data-pop="callback").pop_close-btn ×
 			h3.callback-pop_title Оставьте свой телефон и мы вам перезвоним
+			input.input-form-name.input-callback(name="formname" value="callback")
 			input.g-input(
-				name="name" placeholder="Имя" required
+				name="name" type="name" placeholder="Имя" required
 			)
 			input.g-input(
-				name="phone" placeholder="Телефон"
+				name="tel" placeholder="Телефон"
 				type="tel" autocorrect="off" autocomplete="tel" required
 			)
 			button.g-primary-btn

@@ -1,0 +1,88 @@
+.timer_time
+	width 264px
+	height 264px
+	border-radius 16px
+	font-weight 900
+	display flex
+	flex-direction column
+	align-items center
+	justify-content center
+	background-color c-surface
+	border-top 20px transparent solid
+	padding-bottom 20px
+
+.time_remains
+	font-size 100px
+
+.timer_title
+	font-size 24px
+	color c-second
+
+.timer
+	display flex
+	justify-content space-around
+	margin-bottom 62px
+
+.timer-content
+	display flex
+	flex-direction column
+
+
+.section_title
+	text-align center
+	font-size 48px
+	line-height 1.2
+
+.days-timer
+	position relative
+	border-top 20px c-prim solid
+.days-timer:before
+	content ''
+	display block
+	position absolute
+	top -30px
+	left 0
+	width 100%
+	height 30px
+	background-size cover
+	background-image url('../img/general/calendar.svg')
+
+
+.timer-section_title
+	max-width 800px
+	margin 0 auto
+	margin-bottom 20px
+
+.timer-btn
+	padding-left 30px
+	padding-right 30px
+	max-width 300px
+	margin 0 auto
+.minutes:before
+.seconds:before
+	content ':'
+	margin-right 5px
+
+
+@media (max-width 480px)
+	.timer
+		flex-wrap wrap
+		margin-bottom 32px
+	.timer_time
+		padding-top 10px
+		width 24%
+		height auto
+	.time_remains
+		font-size 30px
+	.timer_title
+		font-size 14px
+	.timer-section_title
+		font-size 24px
+	.days-timer:before
+		height 20px
+		top -20px
+	.days-timer
+		border-top 15px c-prim solid
+
+
+

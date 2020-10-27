@@ -8,19 +8,13 @@ require '../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 // Переменные
+$formname = htmlspecialchars($_POST['formname']);
 $name = htmlspecialchars($_POST['name']);
 $tel = htmlspecialchars($_POST["tel"]);
-$address = htmlspecialchars($_POST["address"]);
+$about = htmlspecialchars($_POST["about"]);
+$adv = htmlspecialchars($_POST["adv"]);
+$wait = htmlspecialchars($_POST["wait"]);
 
-$height = htmlspecialchars($_POST["height"]);
-$width = htmlspecialchars($_POST["width"]);
-$length = htmlspecialchars($_POST["length"]);
-$corners = htmlspecialchars($_POST["corners"]);
-$frame = htmlspecialchars($_POST["frame"]);
-$material = htmlspecialchars($_POST["material"]);
-$calculatorCost = htmlspecialchars($_POST["calculatorCost"]);
-
-$orderDetails = [$calculatorCost, $height, $width, $length, $corners, $frame, $material];
 
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
@@ -30,23 +24,28 @@ $mail->isSMTP();
 $mail->SMTPAuth = true;
 $mail->SMTPDebug = 0;
 
-$mail->Host = 'ssl://smtp.gmail.com';
+$mail->Host = 'ssl://server93.hosting.reg.ru';
 $mail->Port = 465;
-$mail->Username = 'boffeerleads@gmail.com';
-$mail->Password = 'Bo8612241142ds';
-
+$mail->Username = 'leads@fadeevgroup.com';
+$mail->Password = 'Q@8612241142';
 // От кого
-$mail->setFrom('boffeerleads@gmail.com', 'Новая заявка');
+$mail->setFrom('leads@fadeevgroup.com', 'Новая заявка');
 
 // Кому
 $mail->addAddress('boffeerleads@gmail.com', 'Принмающий лиды');
 
 // Тема письма
-$mail->Subject = 'Смарт столы, лид с квиза';
+$mail->Subject = 'Онлайн магазины, '.$formname;
 
 // Тело письма
 
-$body = "Цена: ".$calculatorCost."<br>Имя: ".$name."<br>Телефон: " .$tel."<br>Адрес: ".$address."<br>Толщина: ".$height."<br>Ширина: ".$width."<br>Длина: ".$length."<br>Скруглять углы? ".$corners."<br>Фрейм: ".$frame."<br>Материал: ".$material;
+$body =
+"<br>Имя: ".$name.
+"<br>Телефон: " .$tel.
+"<br>Контакт: ".$contact.
+"<br>Про товар: ".$about.
+"<br>Продвигает ли: ".$adv.
+"<br>Чего ждет: ".$wait;
 $mail->msgHTML($body);
 
 // Приложение
@@ -56,7 +55,4 @@ $mail->msgHTML($body);
 
 $mail->send();
 
-echo '<script>
-  location.href= "https://ya.ru";
-</script>';
 ?>

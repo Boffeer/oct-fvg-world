@@ -38,11 +38,11 @@ section.hero
 					<circle class="progress-ring__circle" stroke="white" stroke-width="4" cx="12" cy="12" r="15" fill="transparent"/>
 				</svg>
 			.hero-menu-hor
-				a.hero-menu__item(href="#") отзывы
-				a.hero-menu__item(href="#") кейсы
+				a.hero-menu__item(href="#testimonials") отзывы
+				a.hero-menu__item(href="#cases") кейсы
 			.hero-menu-ver
-				a.hero-menu__item(href="#") контакты
-				a.hero-menu__item(href="#") услуга
+				a.hero-menu__item(href="#contacts") контакты
+				a.hero-menu__item(href="#service") услуга
 
 		.hero-contacts
 			a.hero-phone(href="tel:+375124567890") +375 00 000 00 00
@@ -60,7 +60,7 @@ section.hero
 				a.hero-fullscreen-menu__logo(href="")
 					img.menu-logo--mobile(src="static/img/general/colored-small-logo.svg" alt="fvg")
 					img.menu-logo--desktop(src="static/img/general/colored-big-logo.svg" alt="fvg")
-				button.g-secondary-btn.hero-fullscreen-menu__cta.menu-desktop_btn(type="button")
+				button.g-secondary-btn.hero-fullscreen-menu__cta.menu-desktop_btn(type="button" data-button="Колбек в меню")
 					span Заказать звонок
 
 			ul.hero-fullscreen-menu-nav
@@ -76,7 +76,7 @@ section.hero
 					a.hero-fullscreen-menu__link(href="#testimonials") Отзывы
 
 			.hero-fullscreen-menu-bottom
-				+socials({inst: 'https://instagram.com', vk: 'https://vk.com', fb: 'https://fb.com', tg: 'https://tg.com', whats: 'https://whatsapp.com'})
+				+socials({class: 'hero-menu_socials',inst: 'https://instagram.com', vk: 'https://vk.com', fb: 'https://fb.com', tg: 'https://tg.com', whats: 'https://whatsapp.com'})
 				//- .hero-fullscreen-menu-socilas
 				//- 	a.hero-fullscreen-menu-socials__item.social--insta(href="")
 				//- 		img(src='static/img/general/ig.svg' alt="insta-link")
@@ -90,7 +90,7 @@ section.hero
 				//- 		img(src='static/img/general/wa.svg' alt="whatsapp-link")
 
 				.hero-fullscreen-menu-contacts
-					button.secondary-btn.hero-fullscreen-menu__cta.menu-mobile_btn(type="button")
+					button.g-secondary-btn.hero-fullscreen-menu__cta.menu-mobile_btn(type="button" data-button="Колбек в меню мобильном")
 						span Заказать звонок
 					a.hero-fullscreen-menu-contacts__item.hero-fullscreen-menu-contacts--tel(href="+3751234562723") +375 000 000 00 00
 					a.hero-fullscreen-menu-contacts__item(href="mailtp:hello@fadeevgroup.com") hello@fadeevgroup.com

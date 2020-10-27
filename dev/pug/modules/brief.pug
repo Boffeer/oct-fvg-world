@@ -1,11 +1,12 @@
-section.form
+section.form#brief
 	.container
-		form(action="static/php/contact.php").form-content
+		form.form-content
 			.form-left
 				h2.form_title Заполните бриф и <span>получите скидку 50%</span> на консультацию по вашему проекту/услуге
 				img(src="static/img/6-brief/brief-normal.webp").form_pic
 			.form-right
 				.form-contacts
+					input.input-form-name(name="formname" value="Бриф")
 					input.g-input(
 						name="name"
 						required
@@ -17,14 +18,17 @@ section.form
 						placeholder="Любой удобный контакт"
 					)
 				textarea.g-input.g-textarea(
+					name="about"
 					required
 					placeholder="Расскажите о своем товаре или услуге"
 				)
 				textarea.g-input.g-textarea(
+					name="adv"
 					required
 					placeholder="Продвигаете ли свою услугу? Если да, то как и где?"
 				)
 				textarea.g-input.g-textarea(
+					name="wait"
 					required
 					placeholder="Откуда вы и чего бы хотели от нашего сотрудрничества"
 				)

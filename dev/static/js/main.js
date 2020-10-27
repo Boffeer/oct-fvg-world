@@ -16,6 +16,7 @@ $(document).ready(function () {
 
 	svg4everybody({});
 
+
 	// sliders
 	$('.hero-slider').slick({
 		infinite: true,
@@ -30,52 +31,80 @@ $(document).ready(function () {
 		cssEase: 'linear',
 	})
 
-	$('.cases-wrap').slick({
-		centerMode: true,
+
+	// $('.cases-wrap').slick({
+	// 	centerMode: true,
+	// 	infinite: false,
+	// 	slidesToShow: 2,
+	// 	slidesToScroll: 2,
+	// 	dots: true,
+	// 	arrows: false,
+	// 	centerPadding: '40px',
+	// 	// mobileFirst: true,
+	// 	responsive:
+	// 	[
+	// 	{
+	// 		breakpoint: 1260,
+	// 		settings: {
+	// 			slidesToShow: 1.8,
+	// 			slidesToScroll: 1,
+
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 480,
+	// 		settings: {
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: 1
+	// 		}
+	// 	},
+	// 	]
+	// })
+
+
+	$('.reviews-list').slick({
 		infinite: false,
-		slidesToShow: 2.5,
-		slidesToScroll: 2,
+		slidesToShow: 2,
+		slidesToScroll: 1,
 		dots: true,
 		arrows: false,
-		centerPadding: '40px',
 		// mobileFirst: true,
 		responsive:
 		[
 		{
 			breakpoint: 1260,
 			settings: {
-				slidesToShow: 1.8,
-				slidesToScroll: 1,
-
-			}
-		},
-		{
-			breakpoint: 480,
-			settings: {
 				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		},
-		]
-	})
-	$('.testimonials-wrap').slick({
-		infinite: false,
-		slidesToShow: 2.5,
-		slidesToScroll: 1,
-		dots: true,
-		arrows: false,
-		mobileFirst: true,
-		responsive:
-		[
-		{
-			breakpoint: 1260,
-			settings: {
-				slidesToShow: 1.8,
 				slidesToScroll: 1,
 			}
 		},
 		{
 			breakpoint: 370,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		},
+		]
+	})
+	$('.cases-wrap').slick({
+		infinite: false,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		dots: true,
+		arrows: false,
+		// mobileFirst: true,
+		responsive:
+		[
+		{
+			breakpoint: 1260,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1,
+			}
+		},
+		{
+			breakpoint: 480,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -103,23 +132,41 @@ $(document).ready(function () {
 	        },
 	    }],
 	})
-
+$('.hero-fullscreen-menu__cta').click(function(){
+		let button = $(this).data('button')
+		$('.input-callback').val(button).change()
+		$('.hero-fulscreen-menu-wrap').slideToggle()
+		// var caseNumber = $(this).data('case-number');
+		// $('.case-modal_wrap--'+caseNumber).toggle()
+		$('.callback-pop_wrap').slideToggle()
+	})
 	$('.pop_close-btn').click(function(){
 		let popName = $(this).data('pop');
 		$('.'+popName + '-pop_wrap').slideUp()
 	})
 
 	$('.services-more').click(function(){
+		let service = $(this).data('service')
+		$('.input-callback').val(service).change()
+		console.log($('.input-callback').val())
 		$('.callback-pop_wrap').slideDown()
 	})
 
 	$('.bonus-btn').click(function(){
+		let bonus = $(this).data('button')
+		$('.input-callback').val(bonus).change()
 		$('.callback-pop_wrap').slideDown()
 	})
 	$('.case-btn').click(function(){
+		let button = $(this).data('button')
+		$('.input-callback').val(button).change()
 		$('.callback-pop_wrap').slideDown()
 	})
-
+	$('.timer-btn').click(function(){
+		let button = $(this).data('button')
+		$('.input-callback').val(button).change()
+		$('.callback-pop_wrap').slideDown()
+	})
 
 	// togglers
 	$('.hero-menu-btn').click(function(){
@@ -147,7 +194,7 @@ $(window).scroll(function(){
 			counterOffset = counterContainer.offset().top;
 
 	if (counterScroll > counterOffset && counterCounter == 0) {
-		confetti.start(2500, 200, 500);
+		confetti.start(1200, 200, 500);
 		counterCounter = 1;
 	}
 })
@@ -160,12 +207,12 @@ $(window).scroll(function(){
 
 	// hero
 	var heroSvgDesk = $('#hero-super-logo--desktop').drawsvg({
-		duration: 1500,
+		duration: 2500,
 		easing: 'linear'
 	});
 	heroSvgDesk.drawsvg('animate');
 	var heroSvgMob = $('#hero-super-logo--mobile').drawsvg({
-		duration: 1500,
+		duration: 2500,
 		easing: 'linear'
 	});
 	heroSvgMob.drawsvg('animate');
@@ -257,8 +304,79 @@ window.addEventListener("optimizedScroll", function(){
 
 
 
+
+
+
+
+
+
+
+
 })
 
+jQuery(document).ready(function ($) {
+
+	$("form").submit(function () {
+		var str = $(this).serialize();
+
+		$.ajax({
+			type: "POST",
+			url: "static/php/contact.php",
+			data: str,
+			success: function ()
+			{
+				alert('Данные отправлены. Скоро мы перезвним')
+			}
+		}
+		);
+		return false;
+	});
+});
+
+
+
+	function getTimeRemaining(endtime) {
+	  var t = Date.parse(endtime) - Date.parse(new Date());
+	  var seconds = Math.floor((t / 1000) % 60);
+	  var minutes = Math.floor((t / 1000 / 60) % 60);
+	  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+	  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+	  return {
+	    'total': t,
+	    'days': days,
+	    'hours': hours,
+	    'minutes': minutes,
+	    'seconds': seconds
+	  };
+	}
+
+	function initializeClock(id, endtime) {
+	  var clock = document.getElementById(id);
+	  var daysSpan = clock.querySelector('.days');
+	  var hoursSpan = clock.querySelector('.hours');
+	  var minutesSpan = clock.querySelector('.minutes');
+	  var secondsSpan = clock.querySelector('.seconds');
+
+	  function updateClock() {
+	    var t = getTimeRemaining(endtime);
+
+	    daysSpan.innerHTML = t.days;
+	    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+	    if (t.total <= 0) {
+	      clearInterval(timeinterval);
+	    }
+	  }
+
+	  updateClock();
+	  var timeinterval = setInterval(updateClock, 1000);
+	}
+
+	var deadline="January 01 2021 00:00:00 GMT+0300";
+	// var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000); // for endless timer
+	initializeClock('timer', deadline);
 
 
 
