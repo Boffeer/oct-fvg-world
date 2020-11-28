@@ -1,12 +1,72 @@
+canvas
+	position absolute
+	top 0
+	right 0
+	z-index -3
+.hero-slider_item--inside
+	width 100vw
+	height 100vh
+
+@keyframes loader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.hero-img
+	width 100vw
+	position absolute
+	top -100000px
+	left -100000px
+
+.preloader
+	width 100vw
+	height 100vh
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color #000
+	z-index 100000000
+.preloader_loader
+.preloader_logo
+	position absolute
+	top 0
+	right 0
+	left 0
+	bottom 0
+	margin auto
+.preloader_logo
+	width 100px
+.preloader_loader
+	width 300px
+	animation: loader-rotate 2s infinite ease-in-out;
+
+.hero-socilas__item
+.hero-fullscreen-menu-socilas__item
+	max-width 30px
+	margin-bottom 10px
+	svg
+		max-width 30px
+	svg:hover path
+		stroke red
+	svg:hover .ig-path
+	svg:hover .wa-path
+		fill red
+			
+
+
 .hero
 	overflow hidden
 .hero-container
 	height: 100vh
-	// background-image url('../img/hero-normal.webp')
-
+	// background-image url('../img/content/hero.png')
 .hero-content
 	position relative
 	height 100vh
+	z-index 3
 
 
 .c-hero-super-logo
@@ -19,9 +79,9 @@
 
 .offer
 	position absolute
-	bottom 26px
+	bottom 36px
 	max-width 670px
-
+	left 13vw
 .headliner
 	font-size 57px
 	font-weight 900
@@ -35,10 +95,10 @@
 	display flex
 	flex-direction column
 .hero-socilas__item
-	max-width 50px
-	margin-bottom 20px
+	max-width 30px
+	margin-bottom 10px
 	*
-		max-width 50px
+		max-width 30px
 .hero-slider
 	position absolute !important
 	right 0
@@ -46,7 +106,6 @@
 	width 100vw
 	height 100vh
 	z-index -2
-
 .descriptor
 	font-size 31px
 	line-height 1.3
@@ -83,8 +142,13 @@ hero-arrow-anim = 8px
 	// border-radius 50%
 
 .progress-ring
+	position relative
 	overflow visible !important
 	transition all 0.3s ease
+.progress-ring__circle{
+	opacity: 0;
+}
+
 .hero-menu-btn:after
 	content: ''
 	width 10px
@@ -92,11 +156,11 @@ hero-arrow-anim = 8px
 	border-radius 50%
 	background-color c-f
 	position absolute
-	top 30%
+	top 8px
 	bottom 0
 	right 0
-	left 50%
-
+	left 13px
+	
 .hero-menu__item
 	color c-f
 	font-size 22px
@@ -104,7 +168,7 @@ hero-arrow-anim = 8px
 	margin-right 26px
 
 .hero-img
-	background url('../img/footer-world-normal.webp')
+	background linear-gradient(90.63deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%),  url('../img/content/footer-world.png')
 	background-size cover
 	width 49%
 	height 100%
@@ -117,7 +181,7 @@ hero-arrow-anim = 8px
 	position absolute
 	left 52px
 	top -10px
-	transition all 0.3s ease
+	transition all 0.6s ease
 
 .hero-menu-hor--active
 	left -500px
@@ -135,12 +199,12 @@ hero-arrow-anim = 8px
 .hero-contacts
 	position absolute
 	right 26px
-	top 26px
+	top 15px
 
 .hero-phone
-	padding-top 10px
+	padding-top 3px
 	margin-right 20px
-	font-size 24px
+	font-size 18px
 	color transparent
 	font-weight 900
 	-webkit-text-stroke 1.5px #fff
@@ -152,7 +216,7 @@ hero-arrow-anim = 8px
 	&:hover
 		color: #fff
 		-webkit-text-stroke 0px
-		transition all 0.3s ease
+		transition all 0.6s ease
 
 
 // fullscreen
@@ -230,9 +294,13 @@ hero-arrow-anim = 8px
 		-webkit-text-stroke 0px
 		transition all 0.3s ease
 .hero-fullscreen-menu-contacts--tel
-	font-size 36px
+	font-size 32px
 
-
+.hero-menu_socials{
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+}
 #hero-super-logo--mobile
 	display none
 .menu-logo--mobile
@@ -244,11 +312,15 @@ hero-arrow-anim = 8px
 	.hero-fullscreen-menu-contacts__item
 		font-size 25px
 		text-align center
-	.hero-img
+	.hero-img{
 		width 100%
 		height 45%
+		background linear-gradient(0deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%),  url('../img/content/footer-world.png')
 		top 0
 		left 0
+		background-position: center;
+		background-size: 120%;
+	}
 	.hero-fullscreen-menu-top
 		position absolute
 		top 26px
@@ -257,12 +329,13 @@ hero-arrow-anim = 8px
 		display none
 	#hero-super-logo--mobile
 		display block
+		width 110%
 	.hero-fullscreen-menu__logo
 		margin-left 26px
 	.c-hero-super-logo
 		padding-top 250px
 		position: absolute;
-		left: -10px;
+		left: -21px;
 		// top -10%
 
 
@@ -274,15 +347,23 @@ hero-arrow-anim = 8px
 	.offer
 		width 100%
 		transform translateY(-50px)
+		left 0
+		// left 8vw
+		bottom -20px
 	.headliner
-		font-size 24px
+		font-size 26px
+		padding-left 26px
 		position relative
 
 	.descriptor
 		font-size 24px
 	.hero-cta
 		position relative
-		left -120px
+		width 70px
+		margin 0 auto
+		
+		img
+			width 70px
 
 	.hero-nav
 		left initial
@@ -310,7 +391,12 @@ hero-arrow-anim = 8px
 		font-size 35px
 		text-align right
 		display block
+	
 
+	.hero-menu_socials
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
 	.hero-fullscreen-menu-bottom
 		flex-direction column
 		justify-content center
@@ -338,8 +424,8 @@ hero-arrow-anim = 8px
 @media (max-width 1368px) and (min-width 500px)
 	.offer
 		transform scale(0.65)
-		bottom -10vh
-		left -2vw
+		bottom: -8vh;
+		left: 4vw;
 	.descriptor
 		margin-bottom 0
 	.hero-cta
@@ -355,4 +441,39 @@ hero-arrow-anim = 8px
 			max-height 32px
 
 
+@media (max-width 380px)
+	.offer
+		font-size 27px
+@media (min-width 1400px) and (max-width 1800px)
+	.c-hero-super-logo
+		display flex
+		svg
+			transform scaleY(1.2)
+			position absolute
+			top 70px
+	.headliner
+		font-size 45px
+	.hero-phone
+		margin-top 0
+		padding-top 0
+	.hero-fulscreen-menu
+		width 100%
+		&-wrap
+			padding-right 115px
 
+	.hero-fullscreen-menu-contacts--tel
+		font-size 33px
+
+@media (min-width 500px) and (max-width 1200px)
+	.c-hero-super-logo
+		display flex !important
+		svg
+			transform scaleY(1.5) !important
+			position absolute !important
+			top 70px !important
+	.offer
+		left -2vw !important
+		bottom -2vh !important
+.hero-menu__item:hover
+	-webkit-text-stroke 1px #fff !important
+	color transparent !important

@@ -5,18 +5,18 @@
 
 
 .form-content
-	background-color c-second
+	background-color c-surface
 	border-radius 12px
 	display flex
 	justify-content space-between
 	padding 60px
 
 .form_title
-	color #232323
+	color #fff
 	font-weight 900
 	font-size 32px
 	span
-		color #fff
+		color c-second
 
 
 
@@ -39,9 +39,12 @@
 	align-items flex-start
 .form-submit
 	padding 20px 45px
+	padding-left: 0;
+	padding-right: 0;
+	width: 50%;
+	margin-right: 26px;
 
-
-@media (max-width 480px)
+@media (max-width 1080px)
 	.form-content
 		padding 20px
 		flex-direction column
@@ -66,8 +69,21 @@
 		align-items stretch
 	.form-submit
 		margin-bottom 26px
+		margin-right 0
+		width 100%
+		
 
-
+@media (min-width 500px) and (max-width 1200px)
+	.form-content
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 48px 58px;
+	.form_title
+		text-align center
+	.gdpr
+		text-align center
+	
 
 
 

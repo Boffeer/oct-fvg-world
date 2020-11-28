@@ -19,7 +19,7 @@
 
 	&-bullets
 		display flex
-		justify-content center
+		justify-content center 
 		align-items center
 		flex-wrap wrap
 
@@ -29,11 +29,13 @@
 		align-items center
 		flex-direction column
 
-		padding 58px 68px
-		margin 0 26px 36px 0
+		// padding 38px 48px
+		padding 38px 28px
+		margin 0 13px 36px 13px
 		min-width 332px
-		max-width 377px
-		min-height 333px
+		max-width 27%
+		// min-height 260px
+		min-height 332px
 
 
 		background-color c-surface
@@ -51,11 +53,18 @@
 		text-align center
 		font-weight: 600
 
-
+.confetti .exp-bullets{
+	justify-content: flex-start;
+	margin: 0 auto;
+}
+.confetti .exp-bullet{
+	margin-right: 13px;
+	margin-left: 13px;
+}
 .microtitle
 	color c-second
 
-@media(max-width 736px)
+@media(max-width 480px)
 	.exp
 		justify-content center
 		&-title
@@ -69,3 +78,11 @@
 			margin-bottom 40px
 			width 80%
 			margin-left 0
+			
+@media (max-width 1200px) and (min-width 500px)
+	.exp-title
+		margin-bottom 62px
+	.exp-bullet
+		min-height 280px
+	.cake-img
+		display none

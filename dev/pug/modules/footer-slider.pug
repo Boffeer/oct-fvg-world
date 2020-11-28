@@ -1,10 +1,21 @@
-section.slider-bg
+section.footer-bg
 	.footer-content
-		.logo-container
-			h2.logo Наши другие проекты
-
+		+title('Проекты FADEEV GROUP', 15, 'footer')
 		.footer-slider-wrap
-			.footer-slider
+			.js-footer-slider
+
+
+				s.lide-wrap
+					.slide-inner
+						.world
+							.world_inner
+								h2.world_title Покупка и доставка товаров со всех торговых площадок
+								ul.world-offer
+									li.world-offer_title Консультация по выбору товара
+									li.world-offer_title Доставка без переплат
+									li.world-offer_title Товары до двух раз дешевле, чем в вашем городе
+								a(href="http://delivery.fadeevgroup.com").footer-btn Перейти на сайт
+							.delivery_bg
 				.slide-wrap
 					.slide-inner
 						.world
@@ -14,8 +25,11 @@ section.slider-bg
 									li.world-offer_title  Создание и ведение магазина
 									li.world-offer_title Консультация по товару/услуге
 									li.world-offer_title Продвижение в топ поиска торговых площадок
-								a(href="").footer-btn Перейти на сайт
+								a(href="http://world.fadeevgroup.com").footer-btn Перейти на сайт
 							.world_bg
+
+
+
 				.slide-wrap
 					.slide-inner
 						.branding
@@ -31,36 +45,16 @@ section.slider-bg
 										.branding-line_text услуги
 										.branding-line
 								a(href="http://branding.fadeevgroup.com").footer-btn Перейти на сайт
+
 				.slide-wrap
 					.slide-inner
-						.world
-							.world_inner
-								h2.world_title Покупка и доставка товаров со всех торговых площадок
-								ul.world-offer
-									li.world-offer_title Консультация по выбору товара
-									li.world-offer_title Доставка без переплат
-									li.world-offer_title Товары до двух раз дешевле, чем в вашем городе
-								a(href="").footer-btn Перейти на сайт
-							.delivery_bg
+						.footer-socials
+							.footer-socials_texts
+								.footer-socials_inner
+									ul.footer-socials-bullets
+										li.footer-social_bullet Реклама в Instagram, VK, Telegram, Youtube
+										li.footer-social_bullet Нативная 
+										li.footer-social_bullet Видео
+										li.footer-social_bullet Посты 
+									a.footer-btn(href="//socials.fadeevgroup.com") Перейти на сайт
 
-	.container
-		footer
-			.footer-logo_container
-				img.footer-logo(src="static/img/general/footer-logo.svg")
-				p.footer-logo_descriptor Создание и продвижение онлайн магазинов
-			.footer-links
-				.footer-links-1
-					a(href="").footer_link +375 00 000 00 00
-					a(href="").footer_link hello@fadeevgroup.com
-					a(href="").footer_link УНП 000000000
-				.footer-links-2
-					a(href="").footer_link Политика конфиденциальности
-					a(href="").footer_link Отказ от ответственности
-			.footer-socials
-				+socials({
-					'inst': 'https://instagram.com',
-					'vk': 'https://vk.com',
-					'fb': 'https://facebook.com',
-					'tg': 'https://telegram.org',
-					'whats': 'https://whatsapp.com',
-				})

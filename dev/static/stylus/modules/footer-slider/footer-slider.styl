@@ -1,28 +1,36 @@
-.slider-bg
-	background-color #000
-	margin-bottom 0
-.logo-container
-	display flex
-	justify-content center
-	padding-top 50px
-	margin-bottom 30px
-.logo
-	text-align center
-	margin 0 auto
-	color #fff
-	padding-top 30px
-	font-size 32px
-	margin-bottom 30px
+.footer-bg{
+	padding-top 60px
+	background #000
+}
+.footer-bg .slick-dotted.slick-slider{margin-bottom: 0px;}
+
+.footer-title{
+	margin-bottom: 40px;
+	font-size: 50px;
+}
+
+.hero-bg--variable
+	width 100vw
+	height 100vh
+	position absolute
+	left 0
+	top 0
+	z-index -2
+	transition all 0.3s ease
+	background url("../img/content/hero-branding.png")
+	background-size cover
+	filter: blur(20px)
 
 .branding
 .delivery
 .world
 	margin 0 72px
-	overflow hidden
 	// box-shadow: 0px 6.88829px 45.7616px rgba(255, 255, 255, 0.141362);
 	border-radius 28px
 	min-height 700px !important
 	width 1360px !important
+	display flex
+	align-items center
 
 .world
 	background-color #0B0A0B
@@ -41,7 +49,7 @@
 	font-weight 600
 	font-size 18px
 	border-radius 60px
-	padding 13px 0
+	padding 13px 73px
 	max-width 330px
 	line-height 2
 	text-align center
@@ -53,12 +61,11 @@
 
 
 .branding
-	padding 60px 40px 90px
-	background-image url('../img/footer-branding-normal.webp')
+	padding 40px
+	background: url('../img/content/hero-branding.png'), #000C34
 	background-size cover
-	max-height 715px
-	line-height 1.15 !important
-
+	    background-position-x: -4px
+	background-repeat no-repeat
 
 .branding_inner
 	max-width 45%
@@ -75,11 +82,11 @@
 
 .branding-offer
 	margin-bottom 27px
-	padding-left 40px
+	padding-left 35px
 .branding-offer_title
 	font-weight 900
 	font-size 37px
-	margin-bottom 30px
+	margin-bottom 20px
 .branding-offer--web
 	color: #42BBFF;
 	text-shadow: 0px 31.3332px 40.5243px rgba(8, 117, 180, 0.273165), 0px 16.7522px 21.6662px rgba(8, 117, 180, 0.226521), 0px 9.39116px 12.1459px rgba(8, 117, 180, 0.19), 0px 4.98758px 6.4506px rgba(8, 117, 180, 0.153479), 0px 2.07544px 2.68424px rgba(8, 117, 180, 0.106835);
@@ -119,7 +126,7 @@
 	z-index 1
 	display block
 	width 13px
-	height 230px
+	height 300px
 	background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F41814;
 	background-blend-mode: overlay, normal;
 
@@ -129,13 +136,15 @@
 	display flex
 	justify-content center
 	align-items center
-
+	margin-bottom 15px
 
 
 .world
 	position relative
 	padding 90px 90px
 .world_inner
+	position relative
+	z-index 2
 	max-width 45%
 
 .world_title
@@ -159,7 +168,7 @@
 	color #fff
 .world_bg
 	width 50%
-	background: linear-gradient(90.63deg, #09090A 0.53%, rgba(9, 9, 10, 0) 15.47%), url('../img/footer-world-normal.webp')
+	background: linear-gradient(90.63deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%), url('../img/content/hero-world.png')
 	background-size cover
 	border-radius 0 16px 16px 0
 	height 700px
@@ -168,18 +177,16 @@
 	// z-index 20
 	top 0
 
-.world_inner
-	position relative
-	z-index 20
+
 
 
 
 .delivery_bg
+	height 100%
 	width 100%
-	background: url('../img/footer-delivery-normal.webp')
+	background: url('../img/content/hero-delivery.png')
 	background-size cover
-	border-radius 0 16px 16px 0
-	height 600px
+	border-radius 32px
 	position absolute
 	right 0
 	z-index 0
@@ -190,45 +197,42 @@
 
 
 
-@media(min-width 1800px)
-	.branding
-		background-position-x -50px
-		padding-top 40px
-	.branding-line
-		height 330px
+
 
 
 
 @media(min-width 1260px) and (max-width 1600px)
+	.slide-inner
+		margin-bottom 10px
+		height 530px
 	.logo-container
-		padding-top 20px
-		margin-bottom 20px
-	.branding
-		background-position-x 0
+		padding-top 10px
+		margin-bottom 10px
+	.logo
+		width 200px
+	.branding .footer-btn
+		margin-left 65px
 	.branding
 	.world
 		// background-position-x -80px
-		min-height 546px !important
-		max-height 546px !important
+		min-height 530px !important
 		width: 1260px !important;
-
-	.slick-dots
-		bottom -45px !important
 	.branding_title
 		font-size 40px
 		margin-bottom 20px
 	.branding-offer_title
 		font-size 28px
+	.branding-offer
+		margin-left: 35px;
 		margin-bottom 10px
-	// .branding-offer
-	// 	margin-bottom 0
 	.branding-line
-		height 200px
-
+		height 242px
+	
 	.world
-		padding-top 40px
-		padding-bottom 40px
+		padding-top 30px
+		padding-bottom 30px
 		padding-left 90px
+		overflow hidden
 	.world_title
 		font-size 30px
 	.world-offer_title
@@ -239,31 +243,149 @@
 
 
 
-@media (max-width 480px)
+
+
+*{
+	outline none !important
+}
+
+
+.footer-socials{
+	background-image: url(../img/content/footer-socials.png);
+	background-size: cover;
+	width 1124px;
+	height: 100%;
+	border-radius: 26px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	background-position-x: 190px;
+	background-size: 100%;
+	background-position-y: -92px;;
+}
+
+.footer-socials_texts{
+	height: 100%;}
+.footer-socials_inner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: #182C42;
+	width: 33%;
+	height: 100%;
+	border-radius: 26px 0 0 26px;;
+}
+.footer-socials-bullets{
+	padding: 40px 40px 40px 70px
+	color #fff
+	overflow hidden
+	position: relative;
+	z-index: 2;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.footer-socials-bullets::before{
+	content ''
+	display: block;
+	background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #D93621;
+	background-blend-mode: overlay, normal;
+	width: 10px;
+	height: 200px;
+	position: absolute;
+	top: 30px;
+	left: 35px;
+	z-index: 3;
+}
+.footer-socials-bullets::after{
+	content 'услуги'
+	font-weight: 700;
+	/* writing-mode: vertical-lr; */
+	/* transform: scale(-1,1); */
+	transform rotate(-90deg)
+	position: absolute;
+	top: 54px;
+	left: -9px;
+	z-index: 4;
+}
+.footer-social_bullet{
+	position: relative;
+	z-index: 2;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+.footer-bullets_blur{
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: 26px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(40px);
+	z-index: -1;
+}
+.footer-socials_texts{
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
+.footer-socials_link{
+	opacity: 0
+}
+@media (max-width 1080px)
 	.hero-bg
 		padding-left 0
 	.logo-container
-		margin-bottom 20px
-		padding-top 20px
-	.btn
+		margin-bottom 10px
+		padding-top 10px
+	.logo
+		width 150px
+	.footer-btn
 		padding-left 0
 		padding-right 0
 		width 100%
 		text-align center
 
 	.slide-inner
+		margin-bottom: 10px;
 		justify-content center
+		height 570px
+
+	.branding
+		background-position 0
 	.branding
 	.delivery
 	.world
+	.footer-socials
 		overflow hidden
 		max-width 300px
-		padding 10px !important
+		padding 0 
 		margin 0 20px
 		min-height 500px !important
+		height: 560px;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		background-size: 140%;
+		background-position-x: -60px;
+		background-position-y: 0px;
+	.footer-socials_texts{
+		justify-content: flex-end;
+	}
+	.footer-socials_inner{
+		height: auto;
+		width: 100%;
+		background: #1c334a;
+		border-radius: 0;
+	}
 	.branding_inner
 	.delivery_inner
 	.world_inner
+		z-index 2
 		margin-left 0
 		max-width 100%
 
@@ -272,7 +394,7 @@
 	.world_inner
 		padding-top 150px
 	.branding
-		background-image url('../img/footer-branding-mobile-normal.webp')
+		background-image url('../img/content/hero-branding-mobile.png')
 
 	.branding_title
 		font-size 30px
@@ -280,7 +402,9 @@
 	.branding-offer_title
 		font-size 19px
 		margin-bottom 5px
-
+	
+	.branding-offer
+		margin-left 10px
 	.branding-line_outer
 		left -15px
 	.branding-line
@@ -294,7 +418,7 @@
 
 
 	.world_bg
-		background: linear-gradient(359.89deg, #09090A 0.65%, rgba(9, 9, 10, 0) 15.64%), url('../img/footer-world-normal.webp')
+		background: linear-gradient(359.89deg, #09090A 0.65%, rgba(9, 9, 10, 0) 15.64%), url('../img/content/hero-world.png')
 		max-width 300px
 		max-height 279px !important
 		background-size cover
@@ -309,7 +433,9 @@
 	.world_title
 		font-size 20px
 		padding-left 10px
-
+	.world-offer
+		margin-left auto
+		max-width 95%
 	.world-offer:before
 		left -20px
 	.world-offer_title
@@ -327,79 +453,53 @@
 		background-position-x -150px
 
 
+	.footer-socials{
+		width: 300px;
+	}
+	.footer-socials-bullets{
+		background: #1c334a;
+		border-radius: 24px 24px 0 0;
+	}
+	.footer-social_bullet{
+		font-size: 16px;
+	}
+	.footer-socials_texts{
+		flex-direction: column;
+	}
+	.footer-socials-bullets::after{
+		top: 53px;
+		left: -8px;
+	}
+@media (min-width: 1800px)
+	.hero-bg{
+		padding-bottom: 50px;
+	}
+	.branding{
+		background-position: -40px;
+	}
+	.branding .footer-btn {
+		margin-left: 35px;
+	}
+	.world{
+		min-height: 680px;
+		max-height: 680px;
+		padding: 0 90px;
+		border-radius: 32px;
+	}
 
-
-// footer
-footer
-	padding-top 90px
-	padding-bottom 40px
-	display flex
-	justify-content space-between
-
-.footer-logo_container
-	display flex
-	flex-direction column
-
-.footer-logo_descriptor
-	text-align center
-	color #fff
-	opacity 0.8
-	font-size 14px
-
-
-
-.footer_link
-	color #fff
-	opacity 0.8
-	font-size 16px
-	margin-bottom 5px
-	trans()
-.footer_link:hover
-	color c-prim
-	trans()
-
-
-.footer-links
-	display flex
-.footer-links-1
-	display flex
-	flex-direction column
-	margin-right 26px
-.footer-links-2
-	display flex
-	flex-direction column
-
-.socials_item
-	margin-right 16px
-.socials_item:last-child
-	margin-right 0
-
-.socials_item-icon:hover
-	fill c-prim
-	stroke c-prim
-	trans()
-
-
-
-
-
-
-@media (max-width 480px)
-	footer
-		flex-direction column
-		align-items center
-	.footer-logo_container
-		margin-bottom 26px
-	.footer-links-1
-		margin-right 0
-	.footer-links
-		flex-direction column
-		align-items center
-		text-align center
-		margin-bottom 26px
-
-
-.footer-socilas svg
-	margin-right 16px
-.footer-socilas svg:last-child
-	margin-right 0
+	.footer-socials{
+		min-height: 700px;
+		width: 80%;
+		background-position-x: 218px
+	}
+	.footer-socials_texts {
+	height: 700px;
+	}
+@media (max-width: 380px)
+	.hero-bg{justify-content: flex-start;}
+	.logo-container{
+		margin-bottom: 0;
+	}
+	.slide-inner{
+		margin-bottom: 0;
+	}

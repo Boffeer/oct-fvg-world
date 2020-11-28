@@ -3,7 +3,7 @@
 .rolling-title
 	margin-bottom 90px
 	&__item
-		font-size 70px
+		font-size 60px
 		font-weight 900
 		margin-right 26px
 		margin-bottom 0 !important
@@ -14,15 +14,32 @@
 .rolling-title-row--1
 .rolling-title-row--2
 .rolling-title-row--3
-	width 1000vw
 	overflow hidden
-	transition all 0.3s ease
+	transition all 0.4s ease
+	width 1760vw
+
+
+.first-active-title{
+	color: #fff !important;
+	text-shadow: none !important;	
+}
+
+
+.footer-title
+	text-align left !important
+	.rolling-title-row--1
+	.rolling-title-row--2
+	.rolling-title-row--3
+		width 1760vw !important
+
 
 .rolling-title__item
 	f-rolling-title()
 	display inline-block
 	margin-right 26px
-
+	&:hover
+		color #fff
+		text-shadow none
 .title-row-2
 	position relative
 	left -50%
@@ -113,6 +130,7 @@
 	.gdpr
 		width 100% !important
 		font-size 12px !important
+		
 		a
 			font-size 12px !important
 
@@ -184,5 +202,6 @@
 .gdpr
 	font-size 12px
 	flex-basis 60%
+	line-height 1.2
 	*
 		font-size inherit

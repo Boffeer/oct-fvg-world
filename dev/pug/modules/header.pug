@@ -1,4 +1,7 @@
-section.hero
+.preloader
+	img(src='static/img/general/fvg-small-logo.svg').preloader_logo
+	img(src="static/img/general/loader.svg").preloader_loader
+section.hero#hero
 	.c-hero-super-logo
 		svg(
 			viewbox='0 0 1920 1000',
@@ -22,14 +25,26 @@ section.hero
 			path(d='M198.648 138.062L227.428 2.40671L268.5 2.40625L220.672 183.462L176.49 183.327L128.118 2.54194L169.464 2.5411L198.243 138.062', stroke='white', stroke-width='4')
 
 	.hero-container
-		.container
-			.hero-content
-				.offer
-					h1.headliner Создаю/продвигаю <br>онлайн-магазины <br>на Amazon и Ebay <br>с доходом от $3000
-					a(href="#start").hero-cta
-						img(src="static/img/general/cta.svg")
+		.hero-content
+			.offer
+				h1.headliner Создаю/продвигаю <br>онлайн-магазины <br>на Amazon и Ebay <br>с доходом от $3000
+				a(href="#start").hero-cta
+					img(src="static/img/general/cta.svg")
 
 		.hero-img
+		#slider
+
+			img.hero-slider_item--inside.slide-item__image( src='static/img/content/1-hero/black.png', alt='')
+			img.hero-slider_item--inside.slide-item__image( src='static/img/content/1-hero/hero.png', alt='')
+
+
+
+
+			#pagination
+				button(class="active" data-slide="0").slider_controller#slider_controller-0
+				button(data-slide="1").slider_controller#slider_controller-1
+			#slide-title(data-slide-title="1")
+			#slide-status(data-slide-status="1")
 
 		nav.hero-nav
 
@@ -48,16 +63,19 @@ section.hero
 			a.hero-phone(href="tel:+375124567890") +375 00 000 00 00
 			.hero-socials
 				a.hero-socilas__item.social--tg(href="#")
-					img(src="static/img/general/tg.svg" alt="")
+					+tgIcon()
+					//- img(src="static/img/general/tg.svg" alt="")
 				a.hero-socilas__item.social--vk(href="#")
-					img(src="static/img/general/vk.svg" alt="")
+					//- img(src="static/img/general/vk.svg" alt="")
+					+vkIcon()
 				a.hero-socilas__item.social--insta(href="#")
-					img(src="static/img/general/ig.svg" alt="")
+					+igIcon()
+					//- img(src="static/img/general/ig.svg" alt="")
 
 	.hero-fulscreen-menu-wrap
 		.hero-fulscreen-menu
 			.hero-fullscreen-menu-top
-				a.hero-fullscreen-menu__logo(href="")
+				a.hero-fullscreen-menu__logo(href="#hero")
 					img.menu-logo--mobile(src="static/img/general/colored-small-logo.svg" alt="fvg")
 					img.menu-logo--desktop(src="static/img/general/colored-big-logo.svg" alt="fvg")
 				button.g-secondary-btn.hero-fullscreen-menu__cta.menu-desktop_btn(type="button" data-button="Колбек в меню")

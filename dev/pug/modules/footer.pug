@@ -1,0 +1,45 @@
+.footer
+	.container
+		footer
+			a(href="#hero").footer-logo_container
+				img.footer-logo(src="static/img/general/footer-logo.svg")
+				p.footer-logo_descriptor Создание и ведение онлайн-магазинов
+			.footer-links
+				.footer-links-1
+					a(href="#{byPhoneLnk}").footer_link #{byPhone}
+					a(href="#{ruPhoneLnk}").footer_link #{ruPhone}
+					a(href="mailto:#{email}").footer_link #{email}
+				.footer-links-2
+					a(href="").footer_link УНП #{unp}
+					a(href="#{policy}").footer_link Политика конфиденциальности
+					a(href="#{reject}").footer_link Отказ от ответственности
+			+socials({ 'class': 'footer-socials-icons',
+				'inst': 'https://instagram.com',
+				'vk': 'https://vk.com',
+				'fb': 'https://facebook.com',
+				'tg': 'https://telegram.org',
+				'whats': 'https://whatsapp.com',	
+				'vi': 'https://viber.com'
+			})
+//- .footer
+//- 	.container
+//- 		footer
+//- 			.footer-logo_container
+//- 				img.footer-logo(src="static/img/general/footer-logo.svg")
+//- 				p.footer-logo_descriptor Создание и ведение онлайн-магазинов
+//- 			.footer-links
+//- 				.footer-links-1
+//- 					a(href="").footer_link +375 00 000 00 00
+//- 					a(href="").footer_link hello@fadeevgroup.com
+//- 					a(href="").footer_link УНП 000000000
+//- 				.footer-links-2
+//- 					a(href="").footer_link Политика конфиденциальности
+//- 					a(href="").footer_link Отказ от ответственности
+//- 			+socials({ 'class': 'footer-socials-icons',
+//- 				'inst': 'https://instagram.com',
+//- 				'vk': 'https://vk.com',
+//- 				'fb': 'https://facebook.com',
+//- 				'tg': 'https://telegram.org',
+//- 				'whats': 'https://whatsapp.com',
+//- 			})
+
