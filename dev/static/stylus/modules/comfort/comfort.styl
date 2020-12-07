@@ -98,13 +98,17 @@
 		height 97%
 		align-self flex-end
 
+
+
+
 @media(max-width 480px)
 
 	.a-comfort-money
 		display none
 	.comfort
 		h2
-			font-size 17px
+			font-size 22px
+			line-height 1
 		&-list
 			max-width 100%
 			padding 17px
@@ -112,18 +116,24 @@
 		&-item
 			flex-direction column
 			width 100% !important
+			position relative
 			.comfrot-pic
 				border-radius 16px 16px 0 0
+			
 		&__text
+			transition all 0.5s
 			padding 30px 40px
 			font-size 16px
 			border-radius 16px
 
 		&__pic
-			display none
-			min-width 100%
+			min-width unset
+			height 100%
 			height auto
 			border-radius 12px 12px 0 0
+			left 2px
+			top 2px
+			position absolute
 
 		&-pic
 			width 100%
@@ -133,11 +143,32 @@
 			display block
 			max-height 250px
 			object-fit cover
+			min-width 100%
+			position relative
 		.comfort__text
 			border-radius 0 0 16px 16px
-	.comfort-item--3
+	
+	.comfort-item--2
+		margin-bottom 200px
+		.comfort__text
+			transform translateX(140px)
 		.comfort__pic
-			display none
+			top 1px
+			height 100%
+	.comfort-item--3
+		.comfort__text
+			transform translateX(140px)
+		.comfort__pic
+			top -100%
+		
+	.comfort-item--4
+		img
+			height 100%
+			top: 0px;
+		    border-radius: 12px 0 0 12px;
+			
+		.comfort__text
+			transform translateX(133px)
 
 @media (max-width 1200px) and (min-width 500px)
 	.comfort-item--3 .comfort__text

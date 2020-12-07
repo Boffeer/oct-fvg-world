@@ -1,11 +1,51 @@
-canvas
+main {
+	position: relative;
+	width: 100%;
+	height: 100vh;
 	position absolute
 	top 0
-	right 0
-	z-index -3
-.hero-slider_item--inside
-	width 100vw
+	left 0
+	z-index -5
+}
+#slider {
+	width: 100%;	
+	// max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+canvas
+	width: 150%;
+	height: 150%;
+	position: absolute;
+	top: 50%;
+	// top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.2);
+	z-index: 3;
+.hero-slider-pic {
+	width: 100%;
+	max-width: 100%;
 	height 100vh
+	position: absolute;
+	z-index: 0;
+	top -100000px
+	left -10000px
+}
+// canvas
+// 	position absolute
+// 	top 0
+// 	right 0
+// 	z-index -3
+// .hero-slider_item--inside
+// 	width 100vw
+// 	height 100vh
+// #slider
+// 	width: 100%;
+// 	max-width: 1200px;
+// 	height: 100%;
+// 	margin: 0 auto;
+	// position: relative;
 
 @keyframes loader-rotate {
   100% {
@@ -16,9 +56,15 @@ canvas
 
 .hero-img
 	width 100vw
+	height 100vh
 	position absolute
-	top -100000px
-	left -100000px
+	// top -100000px
+	// left -100000px
+	top 0
+	left 0
+	// z-index 10
+	z-index -5
+		
 
 .preloader
 	width 100vw
@@ -76,12 +122,15 @@ canvas
 	width 100vw
 	height 100vh
 	z-index -1
+	transition all 0.4s
+	
 
 .offer
 	position absolute
 	bottom 36px
 	max-width 670px
 	left 13vw
+	transition all 0.4s
 .headliner
 	font-size 57px
 	font-weight 900
@@ -135,9 +184,12 @@ hero-arrow-anim = 8px
 	left 26px
 
 .hero-menu-btn
-	size(25px)
 	background-color transparent
 	border none
+	padding 0
+	position absolute
+	top -16px
+	left -5px
 	// border 4px solid c-f
 	// border-radius 50%
 
@@ -145,6 +197,12 @@ hero-arrow-anim = 8px
 	position relative
 	overflow visible !important
 	transition all 0.3s ease
+	width 30px
+	height 30px
+	top 0
+	left 0
+	padding-top 10px
+	padding-left 10px
 .progress-ring__circle{
 	opacity: 0;
 }
@@ -156,10 +214,8 @@ hero-arrow-anim = 8px
 	border-radius 50%
 	background-color c-f
 	position absolute
-	top 8px
-	bottom 0
-	right 0
-	left 13px
+	top 17px
+	left 17px
 	
 .hero-menu__item
 	color c-f
@@ -167,21 +223,21 @@ hero-arrow-anim = 8px
 	font-weight 600
 	margin-right 26px
 
-.hero-img
-	background linear-gradient(90.63deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%),  url('../img/content/footer-world.png')
-	background-size cover
-	width 49%
-	height 100%
-	position absolute
-	top 0
-	right 0
-	z-index -2
+// .hero-img
+// 	background linear-gradient(90.63deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%),  url('../img/content/footer-world.png')
+// 	background-size cover
+// 	width 49%
+// 	height 100%
+// 	position absolute
+// 	top 0
+// 	right 0
+// 	z-index -2
 
 .hero-menu-hor
 	position absolute
 	left 52px
 	top -10px
-	transition all 0.6s ease
+	transition all 0.6s
 
 .hero-menu-hor--active
 	left -500px
@@ -191,7 +247,7 @@ hero-arrow-anim = 8px
 	position absolute
 	left -110px
 	top 122px
-	transition all 0.3s ease
+	transition all 0.6s
 
 .hero-menu-ver--active
 	top -500px
@@ -200,6 +256,7 @@ hero-arrow-anim = 8px
 	position absolute
 	right 26px
 	top 15px
+	z-index 10
 
 .hero-phone
 	padding-top 3px
@@ -313,6 +370,8 @@ hero-arrow-anim = 8px
 		font-size 25px
 		text-align center
 	.hero-img{
+		position absolute
+		top -1000px
 		width 100%
 		height 45%
 		background linear-gradient(0deg, #09090A 0.53%, rgba(9, 9, 10, 0) 25.47%),  url('../img/content/footer-world.png')
@@ -349,7 +408,7 @@ hero-arrow-anim = 8px
 		transform translateY(-50px)
 		left 0
 		// left 8vw
-		bottom -20px
+		bottom 8vh
 	.headliner
 		font-size 26px
 		padding-left 26px
@@ -384,9 +443,10 @@ hero-arrow-anim = 8px
 		width 100%
 
 	.hero-fullscreen-menu-nav
-		padding-right 26px
+		// padding-right 26px
 		padding-top 50px
-		margin-bottom 26px
+		margin-bottom 36px
+		margin-top auto
 	.hero-fullscreen-menu__link
 		font-size 35px
 		text-align right
@@ -400,6 +460,7 @@ hero-arrow-anim = 8px
 	.hero-fullscreen-menu-bottom
 		flex-direction column
 		justify-content center
+		margin-bottom auto
 	.hero-fullscreen-menu-socilas
 		width 100%
 		display flex
@@ -420,6 +481,9 @@ hero-arrow-anim = 8px
 		margin-top 26px
 	.menu-desktop_btn
 		display none
+	.hero-menu-btn
+		top -26px
+		left -25px
 
 @media (max-width 1368px) and (min-width 500px)
 	.offer
@@ -477,3 +541,14 @@ hero-arrow-anim = 8px
 .hero-menu__item:hover
 	-webkit-text-stroke 1px #fff !important
 	color transparent !important
+
+
+
+@media only screen and (min-width: 375px) and (min-height: 812px) and (-webkit-device-pixel-ratio: 2)
+	.hero-fullscreen-menu-nav
+		padding-top 30%
+		margin-bottom 10%
+	.hero-nav
+		top 36px
+	.offer 
+		bottom 10vh

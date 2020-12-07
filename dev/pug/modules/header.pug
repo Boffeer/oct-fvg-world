@@ -31,11 +31,34 @@ section.hero#hero
 				a(href="#start").hero-cta
 					img(src="static/img/general/cta.svg")
 
-		.hero-img
-		#slider
+		main
+			#slider
+				img.hero-slider-pic( src='static/img/content/1-hero/black.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-2.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
 
-			img.hero-slider_item--inside.slide-item__image( src='static/img/content/1-hero/black.png', alt='')
-			img.hero-slider_item--inside.slide-item__image( src='static/img/content/1-hero/hero.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
+				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
+				#pagination
+					button(class="active" data-slide="0").slider_controller#slider_controller-0
+					button(data-slide="1").slider_controller#slider_controller-1
+					button(data-slide="2").slider_controller#slider_controller-2
+					button(data-slide="3").slider_controller#slider_controller-3
+					button(data-slide="4").slider_controller#slider_controller-4
+					button(data-slide="5").slider_controller#slider_controller-5
+					button(data-slide="6").slider_controller#slider_controller-6
+					button(data-slide="7").slider_controller#slider_controller-7
+					button(data-slide="7").slider_controller#slider_controller-7
+			//- #slide-title(data-slide-title="1")
+			//- #slide-status(data-slide-status="1")
+		//- #slider
+
+		//- 	img.hero-slider_item--inside.slide-item__image.hero-img( src='static/img/content/1-hero/black.png', alt='')
+		//- 	img.hero-slider_item--inside.slide-item__image.hero-img( src='static/img/content/1-hero/hero.png', alt='')
+		//- 	img.hero-slider_item--inside.slide-item__image.hero-img( src='static/img/content/1-hero/hero-2.png', alt='')
 
 
 
@@ -43,6 +66,7 @@ section.hero#hero
 			#pagination
 				button(class="active" data-slide="0").slider_controller#slider_controller-0
 				button(data-slide="1").slider_controller#slider_controller-1
+				button(data-slide="2").slider_controller#slider_controller-2
 			#slide-title(data-slide-title="1")
 			#slide-status(data-slide-status="1")
 
