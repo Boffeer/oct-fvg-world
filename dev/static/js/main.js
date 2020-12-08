@@ -799,8 +799,9 @@ window.addEventListener("optimizedScroll", function(){
 		function superLogoMove(){
 			// document.querySelector('.c-hero-super-logo').style.transform = 'translateY(-' + window.pageYOffset * 0.55 + 'px)';
 			// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 1. + 0.2 * window.pageYOffset + ')';
-			document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + '1.' + window.pageYOffset + ')';
-			document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + '1.' + window.pageYOffset + ')';
+			document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 0.01 * window.pageYOffset + ')';
+			if (window.pageYOffset === 0){document.querySelector('.c-hero-super-logo').style.transform = 'scale(1)'}
+			// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + '1.' + window.pageYOffset + ')';
 			// попробуй скейл ап
 		}
 		function heroBgMoving(){
@@ -956,10 +957,10 @@ jQuery(document).ready(function ($) {
 let rowsToHover = [
 	$('.services .rolling-title__item'),
 	$('.work .rolling-title__item'),
-	$('.bonus .rolling-title__item'),
-	$('.cases-title .rolling-title__item'),
+	$('.cases .rolling-title__item'),
 	$('.comfort .rolling-title__item'),
-	$('.testimonials .rolling-title__item'),
+	$('.bonus .rolling-title__item'),
+	$('.reviews .rolling-title__item'),
 	$('.footer-title .rolling-title__item'),
 ];
 
@@ -967,8 +968,8 @@ let titlesToHover = [
 	$('.services .rolling-title-row--2 .rolling-title__item-6'),
 	$('.work .rolling-title-row--2 .rolling-title__item-3'),
 	$('.cases .rolling-title-row--2 .rolling-title__item-5'),
-	$('.bonus .rolling-title-row--2 .rolling-title__item-2'),
 	$('.comfort .rolling-title-row--2 .rolling-title__item-2'),
+	$('.bonus .rolling-title-row--2 .rolling-title__item-2'),
 	$('.reviews .rolling-title-row--2 .rolling-title__item-4'),
 	$('.footer-title .rolling-title-row--2 .rolling-title__item-2'),
 ];

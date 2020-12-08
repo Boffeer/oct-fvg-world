@@ -99,10 +99,18 @@
 		align-self flex-end
 
 
+.comfort-me
+	background: url(../img/content/8-comfort/vald2.png), c-second
+	background-repeat: no-repeat
+	background-size cover
+	background-position center 0px
 
 
 @media(max-width 480px)
-
+	.comfort-me
+		background-position center 30px
+		background-size 50%
+		height 220px !important
 	.a-comfort-money
 		display none
 	.comfort
@@ -169,7 +177,6 @@
 			
 		.comfort__text
 			transform translateX(133px)
-
 @media (max-width 1200px) and (min-width 500px)
 	.comfort-item--3 .comfort__text
 		align-self flex-end
