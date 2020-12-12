@@ -32,9 +32,10 @@ footer:after
 	opacity 0.8
 	font-size 12px
 	line-height 1.4
+	font-weight bold
 	
 .footer-logo_container:hover .footer-logo_descriptor
-	color clr-prim
+	color c-prim
 
 
 
@@ -67,7 +68,6 @@ footer:after
 	display flex
 	flex-direction column
 	margin-right 26px
-	margin-bottom 25px
 .footer-links-2
 	display flex
 	flex-direction column
@@ -83,7 +83,8 @@ footer:after
 // 	fill c-prim !important
 // 	stroke c-prim !important
 // 	trans()
-
+.hero-socials_icon
+	max-height 42px
 
 
 .footer-socials-icons__item
@@ -101,7 +102,9 @@ footer:after
 
 
 
-
+footer .hero-socials_icon:hover path
+	fill c-prim
+	stroke c-prim
 
 @media (max-width 1080px)
 	footer
@@ -116,7 +119,8 @@ footer:after
 		align-items center
 		text-align center
 		margin-bottom 26px
-	
+	.footer-links-1
+		margin-bottom 25px
 	.footer-socials-icons
 		width 100%
 

@@ -34,14 +34,28 @@ section.hero#hero
 		main
 			#slider
 				img.hero-slider-pic( src='static/img/content/1-hero/black.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-2.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
 
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
-				img.hero-slider-pic( src='static/img/content/1-hero/hero-sq.png', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h1.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h2.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h3.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h4.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h5.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h6.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h7.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h8.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h9.jpg', alt='')
+
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h10.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h11.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h12.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h13.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h14.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h15.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h16.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h17.jpg', alt='')
+				img.hero-slider-pic( src='static/img/content/0-test-hero/h18.jpg', alt='')
+
+
 				#pagination
 					button(class="active" data-slide="0").slider_controller#slider_controller-0
 					button(data-slide="1").slider_controller#slider_controller-1
@@ -51,7 +65,19 @@ section.hero#hero
 					button(data-slide="5").slider_controller#slider_controller-5
 					button(data-slide="6").slider_controller#slider_controller-6
 					button(data-slide="7").slider_controller#slider_controller-7
-					button(data-slide="7").slider_controller#slider_controller-7
+					button(data-slide="8").slider_controller#slider_controller-8
+					button(data-slide="9").slider_controller#slider_controller-9
+					button(data-slide="10").slider_controller#slider_controller-10
+					button(data-slide="11").slider_controller#slider_controller-11
+					button(data-slide="12").slider_controller#slider_controller-12
+					button(data-slide="13").slider_controller#slider_controller-13
+					button(data-slide="14").slider_controller#slider_controller-14
+					button(data-slide="15").slider_controller#slider_controller-15
+					button(data-slide="16").slider_controller#slider_controller-16
+					button(data-slide="17").slider_controller#slider_controller-17
+					button(data-slide="18").slider_controller#slider_controller-18
+					button(data-slide="18").slider_controller#slider_controller-19
+					button(data-slide="18").slider_controller#slider_controller-20
 			//- #slide-title(data-slide-title="1")
 			//- #slide-status(data-slide-status="1")
 		//- #slider
@@ -70,9 +96,9 @@ section.hero#hero
 			#slide-title(data-slide-title="1")
 			#slide-status(data-slide-status="1")
 
-		nav.hero-nav
+		nav.hero-nav.hero-nav--hidden
 
-			button.hero-menu-btn(type="button")
+			button.hero-menu-btn.hero-menu-btn--hidden(type="button")
 				<svg class="progress-ring" width="30" height="30">
 					<circle class="progress-ring__circle" stroke="white" stroke-width="4" cx="12" cy="12" r="15" fill="transparent"/>
 				</svg>
@@ -87,13 +113,13 @@ section.hero#hero
 			a.hero-phone(href="tel:+375124567890") +375 00 000 00 00
 			.hero-socials
 				a.hero-socilas__item.social--tg(href="#")
-					+tgIcon()
+					+tgNot()
 					//- img(src="static/img/general/tg.svg" alt="")
 				a.hero-socilas__item.social--vk(href="#")
 					//- img(src="static/img/general/vk.svg" alt="")
-					+vkIcon()
+					+vkNot()
 				a.hero-socilas__item.social--insta(href="#")
-					+igIcon()
+					+igNot()
 					//- img(src="static/img/general/ig.svg" alt="")
 
 	.hero-fulscreen-menu-wrap
@@ -109,13 +135,13 @@ section.hero#hero
 				li.hero-fullscreen-menu__item
 					a.hero-fullscreen-menu__link(href="#services") Услуги
 				li.hero-fullscreen-menu__item
-					a.hero-fullscreen-menu__link(href="#work") Этапы работы
-				li.hero-fullscreen-menu__item
-					a.hero-fullscreen-menu__link(href="#form-consult") Заказать консультацию
-				li.hero-fullscreen-menu__item
 					a.hero-fullscreen-menu__link(href="#cases") Кейсы
 				li.hero-fullscreen-menu__item
 					a.hero-fullscreen-menu__link(href="#testimonials") Отзывы
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#work") Этапы работы
+				li.hero-fullscreen-menu__item
+					a.hero-fullscreen-menu__link(href="#form-consult") Заказать консультацию
 
 			.hero-fullscreen-menu-bottom
 				+socials({class: 'hero-menu_socials',inst: 'https://instagram.com', vk: 'https://vk.com', fb: 'https://fb.com', tg: 'https://tg.com', whats: 'https://whatsapp.com'})
@@ -132,7 +158,7 @@ section.hero#hero
 				//- 		img(src='static/img/general/wa.svg' alt="whatsapp-link")
 
 				.hero-fullscreen-menu-contacts
-					button.g-secondary-btn.hero-fullscreen-menu__cta.menu-mobile_btn(type="button" data-button="Колбек в меню мобильном")
-						span Заказать звонок
-					a.hero-fullscreen-menu-contacts__item.hero-fullscreen-menu-contacts--tel(href="+3751234562723") +375 000 000 00 00
 					a.hero-fullscreen-menu-contacts__item(href="mailtp:hello@fadeevgroup.com") hello@fadeevgroup.com
+					a.hero-fullscreen-menu-contacts__item.hero-fullscreen-menu-contacts--tel(href="+3751234562723") +375 000 000 00 00
+					button.hero-fullscreen-menu__callback(data-button="Колбек в меню") Заказать звонок
+

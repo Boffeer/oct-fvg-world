@@ -22,6 +22,18 @@ canvas
 	left: 50%;
 	transform: translate(-50%, -50%) scale(1.2);
 	z-index: 3;
+	
+main:after
+	content ''
+	display block
+	position absolute
+	top 0
+	left 0
+	width 50%
+	height 100%
+	background-color #0b090b
+	z-index 4
+	
 .hero-slider-pic {
 	width: 100%;
 	max-width: 100%;
@@ -106,7 +118,10 @@ svg:hover .wa-path
 .social--tg:hover path
 	stroke c-prim
 	fill rgba(0,0,0,0)
-			
+
+.hero-contacts svg:hover path
+	stroke none
+	fill white			
 
 
 .hero
@@ -119,6 +134,21 @@ svg:hover .wa-path
 	height 100vh
 	z-index 3
 
+.hero-fullscreen-menu__callback{
+	font-size 26px	
+	border none
+	text-align right	
+	background-color transparent
+	text-decoration underline
+	color #fff
+	font-weight 700	
+	padding 0	
+	font-family Montserrat
+}
+
+.hero-fullscreen-menu-contacts--tel
+	font-size 26px
+	text-align right
 
 .c-hero-super-logo
 	position absolute
@@ -128,11 +158,13 @@ svg:hover .wa-path
 	height 100vh
 	z-index -1
 	transition all 0.4s
-	
+#hero-super-logo--desktop
+	position absolute
+	left -22px
 
 .offer
 	position absolute
-	bottom 36px
+	bottom 32px
 	max-width 670px
 	left 13vw
 	transition all 0.4s
@@ -208,8 +240,35 @@ hero-arrow-anim = 8px
 	left 0
 	padding-top 10px
 	padding-left 10px
+	z-index 100000000
 .progress-ring__circle{
 	opacity: 0;
+}
+.hero-nav--hidden:after {
+	content: '';
+	display block
+	width 40px
+	height 40px
+	background-color #0b090b
+	// background-color red
+	// background-blend-mode multiply
+	position absolute
+	left -29px
+	top -29px
+	z-index 100
+}
+.hero-nav--hidden:before {
+	content: '';
+	display block
+	width 40px
+	height 28px
+	background-color #0b090b
+	// background-color red
+	// background-blend-mode multiply
+	position absolute
+	left -0px
+	top -29px
+	z-index 100
 }
 
 .hero-menu-btn:after
@@ -221,6 +280,12 @@ hero-arrow-anim = 8px
 	position absolute
 	top 17px
 	left 17px
+	box-sizing: content-box;
+.hero-menu-btn--hidden:after
+	border: 13px solid #0b090b;
+	// border-color red
+	top: 3px;
+	left: 4px;
 .hero-menu-btn:hover .hero-menu-btn:after
 	background-color c-prim
 	
@@ -244,20 +309,24 @@ hero-arrow-anim = 8px
 	position absolute
 	left 52px
 	top -10px
-	transition all 0.6s
+	transition left 0.6s, opacity 0.4s
+	opacity 1
 
 .hero-menu-hor--active
 	left -500px
+	opacity 0
 
 .hero-menu-ver
 	transform rotate(-90deg)
 	position absolute
 	left -110px
 	top 122px
-	transition all 0.6s
+	transition top 0.6s, opacity 0.4s
+	opacity 1
 
 .hero-menu-ver--active
 	top -500px
+	opacity 0
 
 .hero-contacts
 	position absolute
@@ -281,7 +350,12 @@ hero-arrow-anim = 8px
 		color: #fff
 		-webkit-text-stroke 0px
 		transition all 0.6s ease
-
+.hero-socilas__item svg, .hero-fullscreen-menu-socilas__item svg
+	max-height 30px
+.hero-socilas__item svg path, .hero-fullscreen-menu-socilas__item svg path
+	fill none
+	stroke white
+	
 
 // fullscreen
 
@@ -357,8 +431,6 @@ hero-arrow-anim = 8px
 		color c-second
 		-webkit-text-stroke 0px
 		transition all 0.3s ease
-.hero-fullscreen-menu-contacts--tel
-	font-size 32px
 
 .hero-menu_socials{
 	width: 300px;
@@ -372,7 +444,20 @@ hero-arrow-anim = 8px
 .menu-mobile_btn
 	display none
 
+
+#pagination
+	position absolute
+	top -500000px
 @media (max-width 480px)
+	.hero-nav--hidden:before,
+	.hero-nav--hidden:after {
+		background-color rgba(0,0,0,0)
+	}
+	.hero-menu-btn--hidden:after {
+		border none
+		top 17px
+		left 17px
+	}
 	canvas
 		top: 25%;
 	.hero-slider-pic
@@ -461,10 +546,12 @@ hero-arrow-anim = 8px
 	.hero-fullscreen-menu-nav
 		// padding-right 26px
 		padding-top 50px
-		margin-bottom 36px
+		margin-bottom 62px
 		margin-top auto
+		
 	.hero-fullscreen-menu__link
-		font-size 35px
+		font-size 28px
+		padding-right 15px
 		text-align right
 		display block
 	
@@ -525,6 +612,8 @@ hero-arrow-anim = 8px
 	.offer
 		font-size 27px
 @media (min-width 1400px) and (max-width 1800px)
+	#hero-super-logo--desktop
+		left -10px
 	.c-hero-super-logo
 		display flex
 		svg
@@ -541,8 +630,6 @@ hero-arrow-anim = 8px
 		&-wrap
 			padding-right 115px
 
-	.hero-fullscreen-menu-contacts--tel
-		font-size 33px
 
 @media (min-width 500px) and (max-width 1200px)
 	.c-hero-super-logo
@@ -560,11 +647,18 @@ hero-arrow-anim = 8px
 
 
 
-@media only screen and (min-width: 375px) and (min-height: 812px) and (-webkit-device-pixel-ratio: 2)
-	.hero-fullscreen-menu-nav
-		padding-top 30%
-		margin-bottom 10%
-	.hero-nav
-		top 36px
-	.offer 
-		bottom 10vh
+
+
+
+
+
+
+
+// @media only screen and (max-width: 480px) and (min-height: 812px) and (-webkit-device-pixel-ratio: 2)
+// 	.hero-fullscreen-menu-nav
+// 		padding-top 30%
+// 		margin-bottom 10%
+// 	.hero-nav
+// 		top 36px
+// 	.offer 
+// 		bottom 10vh

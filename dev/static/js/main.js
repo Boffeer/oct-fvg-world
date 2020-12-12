@@ -3,6 +3,7 @@
 
 
 $(document).ready(function () {
+
 	$("a").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
@@ -31,277 +32,6 @@ $(document).ready(function () {
 		cssEase: 'linear',
 	})
 
-
-	// $('.cases-wrap').slick({
-	// 	centerMode: true,
-	// 	infinite: false,
-	// 	slidesToShow: 2,
-	// 	slidesToScroll: 2,
-	// 	dots: true,
-	// 	arrows: false,
-	// 	centerPadding: '40px',
-	// 	// mobileFirst: true,
-	// 	responsive:
-	// 	[
-	// 	{
-	// 		breakpoint: 1260,
-	// 		settings: {
-	// 			slidesToShow: 1.8,
-	// 			slidesToScroll: 1,
-
-	// 		}
-	// 	},
-	// 	{
-	// 		breakpoint: 480,
-	// 		settings: {
-	// 			slidesToShow: 1,
-	// 			slidesToScroll: 1
-	// 		}
-	// 	},
-	// 	]
-	// })
-	// const displacementSlider = function(opts) {
-
-	//     let vertex = `
-	//         varying vec2 vUv;
-	//         void main() {
-	//           vUv = uv;
-	//           gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-	//         }
-	//     `;
-
-	//     let fragment = `
-	        
-	//         varying vec2 vUv;
-
-	//         uniform sampler2D currentImage;
-	//         uniform sampler2D nextImage;
-
-	//         uniform float dispFactor;
-
-	//         void main() {
-
-	//             vec2 uv = vUv;
-	//             vec4 _currentImage;
-	//             vec4 _nextImage;
-	//             float intensity = 0.3;
-
-	//             vec4 orig1 = texture2D(currentImage, uv);
-	//             vec4 orig2 = texture2D(nextImage, uv);
-	            
-	//             _currentImage = texture2D(currentImage, vec2(uv.x, uv.y + dispFactor * (orig2 * intensity)));
-
-	//             _nextImage = texture2D(nextImage, vec2(uv.x, uv.y + (1.0 - dispFactor) * (orig1 * intensity)));
-
-	//             vec4 finalTexture = mix(_currentImage, _nextImage, dispFactor);
-
-	//             gl_FragColor = finalTexture;
-
-	//         }
-	//     `;
-
-	//     let images = opts.images, image, sliderImages = [];
-	//     let canvasWidth = images[0].clientWidth;
-	//     let canvasHeight = images[0].clientHeight;
-	//     let parent = opts.parent;
-	//     let renderWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	//     let renderHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-	//     let renderW, renderH;
-
-	//     if( renderWidth > canvasWidth ) {
-	//         renderW = renderWidth;
-	//     } else {
-	//         renderW = canvasWidth;
-	//     }
-
-	//     renderH = canvasHeight;
-
-	//     let renderer = new THREE.WebGLRenderer({
-	//         antialias: false,
-	//     });
-
-	//     renderer.setPixelRatio( window.devicePixelRatio );
-	//     renderer.setClearColor( 0x23272A, 1.0 );
-	//     renderer.setSize( renderW, renderH );
-	//     parent.appendChild( renderer.domElement );
-
-	//     let loader = new THREE.TextureLoader();
-	//     loader.crossOrigin = "anonymous";
-
-	//     images.forEach( ( img ) => {
-
-	//         image = loader.load( img.getAttribute( 'src' ) + '?v=' + Date.now() );
-	//         image.magFilter = image.minFilter = THREE.LinearFilter;
-	//         image.anisotropy = renderer.capabilities.getMaxAnisotropy();
-	//         sliderImages.push( image );
-
-	//     });
-
-	//     let scene = new THREE.Scene();
-	//     scene.background = new THREE.Color( 0x23272A );
-	//     let camera = new THREE.OrthographicCamera(
-	//         renderWidth / -2,
-	//         renderWidth / 2,
-	//         renderHeight / 2,
-	//         renderHeight / -2,
-	//         1,
-	//         1000
-	//     );
-
-	//     camera.position.z = 1;
-
-	//     let mat = new THREE.ShaderMaterial({
-	//         uniforms: {
-	//             dispFactor: { type: "f", value: 0.0 },
-	//             currentImage: { type: "t", value: sliderImages[0] },
-	//             nextImage: { type: "t", value: sliderImages[1] },
-	//         },
-	//         vertexShader: vertex,
-	//         fragmentShader: fragment,
-	//         transparent: true,
-	//         opacity: 1.0
-	//     });
-
-	//     let geometry = new THREE.PlaneBufferGeometry(
-	//         parent.offsetWidth,
-	//         parent.offsetHeight,
-	//         1
-	//     );
-	//     let object = new THREE.Mesh(geometry, mat);
-	//     object.position.set(0, 0, 0);
-	//     scene.add(object);
-
-	//     let addEvents = function(){
-
-	//         let pagButtons = Array.from(document.getElementById('pagination').querySelectorAll('button'));
-	//         let isAnimating = false;
-
-	//         pagButtons.forEach( (el) => {
-
-	//             el.addEventListener('click', function() {
-
-	//                 if( !isAnimating ) {
-
-	//                     isAnimating = true;
-
-	//                     document.getElementById('pagination').querySelectorAll('.active')[0].className = '';
-	//                     this.className = 'active';
-
-	//                     let slideId = parseInt( this.dataset.slide, 10 );
-
-	//                     mat.uniforms.nextImage.value = sliderImages[slideId];
-	//                     mat.uniforms.nextImage.needsUpdate = true;
-
-	//                     TweenLite.to( mat.uniforms.dispFactor, 1, {
-	//                         value: 1,
-	//                         ease: 'Expo.easeInOut',
-	//                         onComplete: function () {
-	//                             mat.uniforms.currentImage.value = sliderImages[slideId];
-	//                             mat.uniforms.currentImage.needsUpdate = true;
-	//                             mat.uniforms.dispFactor.value = 0.0;
-	//                             isAnimating = false;
-	//                         }
-	//                     });
-
-	//                     let slideTitleEl = document.getElementById('slide-title');
-	//                     let slideStatusEl = document.getElementById('slide-status');
-	//                     let nextSlideTitle = document.querySelectorAll(`[data-slide-title="${slideId}"]`)[0].innerHTML;
-	//                     let nextSlideStatus = document.querySelectorAll(`[data-slide-status="${slideId}"]`)[0].innerHTML;
-
-	//                     TweenLite.fromTo( slideTitleEl, 0.5,
-	//                         {
-	//                             autoAlpha: 1,
-	//                             filter: 'blur(0px)',
-	//                             y: 0
-	//                         },
-	//                         {
-	//                             autoAlpha: 0,
-	//                             filter: 'blur(10px)',
-	//                             y: 20,
-	//                             ease: 'Expo.easeIn',
-	//                             onComplete: function () {
-	//                                 slideTitleEl.innerHTML = nextSlideTitle;
-
-	//                                 TweenLite.to( slideTitleEl, 0.5, {
-	//                                     autoAlpha: 1,
-	//                                     filter: 'blur(0px)',
-	//                                     y: 0,
-	//                                 })
-	//                             }
-	//                         });
-
-	//                     TweenLite.fromTo( slideStatusEl, 0.5,
-	//                         {
-	//                             autoAlpha: 1,
-	//                             filter: 'blur(0px)',
-	//                             y: 0
-	//                         },
-	//                         {
-	//                             autoAlpha: 0,
-	//                             filter: 'blur(10px)',
-	//                             y: 20,
-	//                             ease: 'Expo.easeIn',
-	//                             onComplete: function () {
-	//                                 slideStatusEl.innerHTML = nextSlideStatus;
-
-	//                                 TweenLite.to( slideStatusEl, 0.5, {
-	//                                     autoAlpha: 1,
-	//                                     filter: 'blur(0px)',
-	//                                     y: 0,
-	//                                     delay: 0.1,
-	//                                 })
-	//                             }
-	//                         });
-
-	//                 }
-
-	//             });
-
-	//         });
-
-	//     };
-
-	//     addEvents();
-
-	//     window.addEventListener( 'resize' , function(e) {
-	//         renderer.setSize(renderW, renderH);
-	//     });
-
-	//     let animate = function() {
-	//         requestAnimationFrame(animate);
-
-	//         renderer.render(scene, camera);
-	//     };
-	//     animate();
-	// };
-
-	// imagesLoaded( document.querySelectorAll('img'), () => {
-
-	//     document.body.classList.remove('loading');
-
-	//     const el = document.getElementById('slider');
-	//     const imgs = Array.from(el.querySelectorAll('img'));
-	//     new displacementSlider({
-	//         parent: el,
-	//         images: imgs
-	//     });
-
-	// });
-
-
-	// var sliderBegin = 1,
-	// 	sliderEnd = 3;
-
-	// var slidePos = sliderBegin,
-	// 	heroSliding = setInterval(() => {
-	// 		// $('.slider_controller[data'+slidePos).trigger( "click" );
-	// 		$('#slider_controller-'+slidePos).trigger( "click" );
-	// 		slidePos++;
-	// 		console.log(slidePos)
-	// 		if(slidePos == sliderEnd){slidePos = sliderBegin}
-	// 		// heroSliding;
-	// 	}, 5000);
 
 const displacementSlider = function(opts) {
 
@@ -521,6 +251,7 @@ const displacementSlider = function(opts) {
     animate();
 };
 
+
 imagesLoaded( document.querySelectorAll('.hero-slider-pic'), () => {
 
     document.body.classList.remove('loading');
@@ -534,15 +265,16 @@ imagesLoaded( document.querySelectorAll('.hero-slider-pic'), () => {
         images: imgs
     });
 
+
 });
 
 
 if ($(window).width() > 480){
 	var sliderBegin = 1,
-		sliderEnd = 4;
+		sliderEnd = 19;
 } else {
-	var sliderBegin = 5,
-		sliderEnd = 8;
+	var sliderBegin = 10,
+		sliderEnd = 18;
 }
 
 var slidePos = sliderBegin,
@@ -553,7 +285,7 @@ var slidePos = sliderBegin,
 		console.log(slidePos)
 		if(slidePos == sliderEnd){slidePos = sliderBegin}
 		// heroSliding;
-	}, 5000);
+	}, 8000);
 
 // $('canvas').css({"transform": "scale(0.5) translate(-50%, -50%)"})
 
@@ -641,10 +373,14 @@ $('.hero-fullscreen-menu__cta').click(function(){
 		// var caseNumber = $(this).data('case-number');
 		// $('.case-modal_wrap--'+caseNumber).toggle()
 		$('.callback-pop_wrap').fadeToggle()
+		$('html').toggleClass('active-pop')
+		
 	})
 	$('.pop_close-btn').click(function(){
 		let popName = $(this).data('pop');
 		$('.'+popName + '-pop_wrap').fadeOut()
+		$('html').toggleClass('active-pop')
+		
 	})
 
 	$('.services-more').click(function(){
@@ -652,30 +388,42 @@ $('.hero-fullscreen-menu__cta').click(function(){
 		$('.input-callback').val(service).change()
 		console.log($('.input-callback').val())
 		$('.callback-pop_wrap').fadeIn()
+		$('html').toggleClass('active-pop')
+		
 	})
 
 	$('.bonus-btn').click(function(){
 		let bonus = $(this).data('button')
 		$('.input-callback').val(bonus).change()
 		$('.callback-pop_wrap').fadeIn()
+		$('html').toggleClass('active-pop')
+
 	})
 	$('.case-btn').click(function(){
 		let button = $(this).data('button')
 		$('.input-callback').val(button).change()
 		$('.callback-pop_wrap').fadeIn()
+		$('html').toggleClass('active-pop')
+
 	})
 	$('.timer-btn').click(function(){
 		let button = $(this).data('button')
 		$('.input-callback').val(button).change()
 		$('.callback-pop_wrap').fadeIn()
+		$('html').toggleClass('active-pop')
+
 	})
 
 	// togglers
 	$('.hero-menu-btn').click(function(){
+		$('html').toggleClass('active-pop')
 		$('.hero-fulscreen-menu-wrap').fadeToggle()
 		$('.hero-menu-hor').addClass('hero-menu-hor--active');
 		$('.hero-menu-ver').addClass('hero-menu-ver--active');
-		console.log(this)
+		// $('.hero-nav:before').css({'background-color': 'rgba(0,0,0,0)'});
+		// $('.hero-nav:after').css({'background-color': 'rgba(0,0,0,0)'});
+		// $('.hero-menu-btn:after').css({'border-color': 'rgba(0,0,0,0)'});
+
 
 		// if ($('.hero-fulscreen-menu-wrap').css('display') == 'none'){
 			if ($('.progress-ring__circle').attr('stroke') !== '#FF1214'){
@@ -685,8 +433,17 @@ $('.hero-fullscreen-menu__cta').click(function(){
 				$('.progress-ring__circle').attr('stroke', '#FFFFFF')
 			}
 		})
+	$('.hero-fullscreen-menu__link').click(function(){
+		$('.hero-fulscreen-menu-wrap').fadeOut()
+		$('html').toggleClass('active-pop')
 
+	})
 
+	$('.hero-fulscreen-menu-wrap').click(function(){
+		$('.hero-fulscreen-menu-wrap').fadeOut()
+		$('html').toggleClass('active-pop')
+
+	})
 
 let counterCounter = 0;
 $(window).scroll(function(){
@@ -790,33 +547,33 @@ window.addEventListener("optimizedScroll", function(){
 	const totalHeight = pageHeight - window.innerHeight
 	const percentage = pixels / totalHeight
 
-	if (window.pageYOffset < 1400){
-		function offerMoveLeft($id){
-			document.querySelector($id).style.transform = 'translateX(-' + window.pageYOffset * 0.65 + 'px)';
-		}
-		offerMoveLeft('.offer')
+	// if (window.pageYOffset < 1400){
+	// 	function offerMoveLeft($id){
+	// 		document.querySelector($id).style.transform = 'translateX(-' + window.pageYOffset * 0.65 + 'px)';
+	// 	}
+	// 	offerMoveLeft('.offer')
 
-		function superLogoMove(){
-			// document.querySelector('.c-hero-super-logo').style.transform = 'translateY(-' + window.pageYOffset * 0.55 + 'px)';
-			// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 1. + 0.2 * window.pageYOffset + ')';
-			document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 0.01 * window.pageYOffset + ')';
-			if (window.pageYOffset === 0){document.querySelector('.c-hero-super-logo').style.transform = 'scale(1)'}
-			// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + '1.' + window.pageYOffset + ')';
-			// попробуй скейл ап
-		}
-		function heroBgMoving(){
-			document.querySelector('canvas').style.transform = 'translateX(' + window.pageYOffset * 0.55 + 'px)';
-			document.querySelector('canvas').style.transition = 'all 0.5s';
+	// 	function superLogoMove(){
+	// 		// document.querySelector('.c-hero-super-logo').style.transform = 'translateY(-' + window.pageYOffset * 0.55 + 'px)';
+	// 		// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 1. + 0.2 * window.pageYOffset + ')';
+	// 		document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + 0.01 * window.pageYOffset + ')';
+	// 		if (window.pageYOffset === 0){document.querySelector('.c-hero-super-logo').style.transform = 'scale(1)'}
+	// 		// document.querySelector('.c-hero-super-logo').style.transform = 'scale(' + '1.' + window.pageYOffset + ')';
+	// 		// попробуй скейл ап
+	// 	}
+	// 	function heroBgMoving(){
+	// 		document.querySelector('canvas').style.transform = 'translateX(' + window.pageYOffset * 0.55 + 'px)';
+	// 		document.querySelector('canvas').style.transition = 'all 0.5s';
 
-			// попробуй скейлдаун
-		}
-		function heroContactsMove(){
-			document.querySelector('.hero-contacts').style.transform = 'translate(' + window.pageYOffset * 0.55 + 'px, ' + window.pageYOffset * 0.55 + 'px)';
-		}
-		offerMoveLeft('.offer')
-		superLogoMove()
-		heroContactsMove()
-	}
+	// 		// попробуй скейлдаун
+	// 	}
+	// 	function heroContactsMove(){
+	// 		document.querySelector('.hero-contacts').style.transform = 'translate(' + window.pageYOffset * 0.55 + 'px, ' + window.pageYOffset * 0.55 + 'px)';
+	// 	}
+	// 	offerMoveLeft('.offer')
+	// 	superLogoMove()
+	// 	heroContactsMove()
+	// }
 
 
 
@@ -849,11 +606,26 @@ window.addEventListener("optimizedScroll", function(){
 		// progressText.innerHTML = `${Math.floor(100 * percentage)}` + '%';
 		$('.hero-menu-hor').addClass('hero-menu-hor--active');
 		$('.hero-menu-ver').addClass('hero-menu-ver--active');
+		if(pixels > 500){
+			$('.hero-nav').removeClass('hero-nav--hidden');
+			$('.hero-menu-btn').removeClass('hero-menu-btn--hidden');
+		}
+		// $('.hero-nav:before').css({'background-color': 'rgba(0,0,0,0)'});
+		// $('.hero-nav:after').css({'background-color': 'rgba(0,0,0,0)'});
+		// $('.hero-menu-btn:after').css({'border-color': 'rgba(0,0,0,0)'});
 	}
 
 	if (pixels == 0) {
 		$('.hero-menu-hor').removeClass('hero-menu-hor--active');
 		$('.hero-menu-ver').removeClass('hero-menu-ver--active');
+		// if (!isHeroLoading){
+			$('.hero-nav').addClass('hero-nav--hidden');
+			$('.hero-menu-btn').addClass('hero-menu-btn--hidden');
+		// }
+
+		// $('.hero-nav:before').css({'background-color': '#0b090b'});
+		// $('.hero-nav:after').css({'background-color': '#0b090b'});
+		// $('.hero-menu-btn:after').css({'border-color': '#0b090b'});
 
 		// progressText.innerHTML = ''
 	}
@@ -953,7 +725,33 @@ jQuery(document).ready(function ($) {
 	initializeClock('timer', deadline);
 
 
+const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+const height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 
+let titlesToHover = []
+
+
+if (window.innerWidth < 480){
+	titlesToHover = [
+		$('.services .rolling-title-row--2 .rolling-title__item-10'),
+		$('.work .rolling-title-row--2 .rolling-title__item-4'),
+		$('.cases .rolling-title-row--2 .rolling-title__item-6'),
+		$('.comfort .rolling-title-row--2 .rolling-title__item-2'),
+		$('.bonus .rolling-title-row--2 .rolling-title__item-2'),
+		$('.reviews .rolling-title-row--2 .rolling-title__item-5'),
+		$('.footer-title .rolling-title-row--2 .rolling-title__item-2'),
+	];
+} else {
+	titlesToHover = [
+		$('.services .rolling-title-row--2 .rolling-title__item-6'),
+		$('.work .rolling-title-row--2 .rolling-title__item-3'),
+		$('.cases .rolling-title-row--2 .rolling-title__item-5'),
+		$('.comfort .rolling-title-row--2 .rolling-title__item-2'),
+		$('.bonus .rolling-title-row--2 .rolling-title__item-2'),
+		$('.reviews .rolling-title-row--2 .rolling-title__item-4'),
+		$('.footer-title .rolling-title-row--2 .rolling-title__item-2'),
+	];
+}
 let rowsToHover = [
 	$('.services .rolling-title__item'),
 	$('.work .rolling-title__item'),
@@ -962,17 +760,10 @@ let rowsToHover = [
 	$('.bonus .rolling-title__item'),
 	$('.reviews .rolling-title__item'),
 	$('.footer-title .rolling-title__item'),
-];
+];	
 
-let titlesToHover = [
-	$('.services .rolling-title-row--2 .rolling-title__item-6'),
-	$('.work .rolling-title-row--2 .rolling-title__item-3'),
-	$('.cases .rolling-title-row--2 .rolling-title__item-5'),
-	$('.comfort .rolling-title-row--2 .rolling-title__item-2'),
-	$('.bonus .rolling-title-row--2 .rolling-title__item-2'),
-	$('.reviews .rolling-title-row--2 .rolling-title__item-4'),
-	$('.footer-title .rolling-title-row--2 .rolling-title__item-2'),
-];
+
+
 
 
 titlesToHover.forEach(function(item, i, titlesToHover){
@@ -1010,8 +801,18 @@ function heroScroll() {
 }
 
  setTimeout(function() {
-  	$(".preloader").fadeOut();
-  }, 300)
+	$(".preloader").fadeOut();
+}, 300)
 heroSvgDesk.drawsvg('animate');
 heroSvgMob.drawsvg('animate');
+
+
+
+// if (isHeroLoading === false){
+//  setTimeout(function() {
+//   	$(".preloader").fadeOut();
+//   }, 300)
+// }
+// heroSvgDesk.drawsvg('animate');
+// heroSvgMob.drawsvg('animate');
 

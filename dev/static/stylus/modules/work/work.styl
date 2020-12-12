@@ -18,6 +18,7 @@
 	align-items center
 	max-width 715px
 	max-height 250px
+	max-width 655px
 
 	background-color c-surface
 	border-radius 12px
@@ -90,8 +91,13 @@
 
 
 @media (max-width 1200px)
+	.card-hor_picture
+		width 100%
+		height 250px
 	.card-hor--wrap
 		flex-direction column
+		max-width 80%
+		margin 0 auto 50px
 	.card-hor
 		flex-direction column
 		max-height 800px
@@ -104,14 +110,14 @@
 		&--1
 			.card-hor_img
 				width 40%
-				left -39%
+				left -49%
 				top -18%
 		&--2
 			flex-direction column !important
 			.card-hor_img
 				width 40%
-				left: -50%;
-				top: 0%;
+				left: -65%;
+				top: 10%;
 		&--3
 			.card-hor_img
 				width 60%
@@ -122,25 +128,25 @@
 			.card-hor_img
 				width 40%
 				top -10%
-				left -55%
+				left -62%
 		&--5
 			.card-hor_img
 				width 60%
-				left: -60%;
+				left: -68%;
 				top: 5%;
 		&--6
 			flex-direction column !important
 			.card-hor_img
 				width 80%
 				top: 0%;
-				left: -70%;
+				left: -74%;
 		&--7
 			.card-hor_img
 				width 50%
 				top -5%
 				left -40%
-				top: -15%;
-				left: -30%;
+				top: -3%;
+				left: -44%;
 		&--2
 			picture
 				padding-top 100px
