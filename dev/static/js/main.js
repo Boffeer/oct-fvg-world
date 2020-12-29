@@ -8,9 +8,13 @@ $(document).ready(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({ scrollTop: destination }, 600);
+		$('.progress-ring__circle').attr('stroke', '#FFFFFF')
 		return false;
 	});
 
+	// $('.hero-fullscreen-menu__link').addEventListener('click', function() {
+	// 	$('.progress-ring__circle').attr('stroke', '#FFFFFF')
+	// })
 	AOS.init({
 		duration: 600,
 	});
@@ -35,7 +39,7 @@ $(document).ready(function () {
 
 const displacementSlider = function(opts) {
 
-    let vertex = `
+    /*let vertex = `
         varying vec2 vUv;
         void main() {
           vUv = uv;
@@ -70,6 +74,43 @@ const displacementSlider = function(opts) {
 
             gl_FragColor = finalTexture;
 
+        }
+    `;*/
+
+
+
+    var vertex = `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    `;
+
+    var fragment = `
+        varying vec2 vUv;
+
+        uniform sampler2D currentImage;
+        uniform sampler2D nextImage;
+        uniform sampler2D disp;
+
+        uniform float dispFactor;
+        float intensity = 0.25;
+        void main() {
+
+            vec2 uv = vUv;
+
+            vec4 disp = texture2D(disp, uv);
+
+            vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*intensity), uv.y);
+            vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*intensity), uv.y);
+
+            vec4 _currentImage = texture2D(currentImage, distortedPosition);
+            vec4 _nextImage = texture2D(nextImage, distortedPosition2);
+
+            vec4 finalTexture = mix(_currentImage, _nextImage, dispFactor);
+
+            gl_FragColor = finalTexture;
         }
     `;
 
@@ -114,7 +155,8 @@ const displacementSlider = function(opts) {
     });
 
     let scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x23272A );
+    scene.background = new THREE.Color( 0x0b090b );
+    // scene.background = new THREE.Color( 0x23272A );
     let camera = new THREE.OrthographicCamera(
         renderWidth / -2,
         renderWidth / 2,
@@ -188,12 +230,14 @@ const displacementSlider = function(opts) {
                         {
                             autoAlpha: 1,
                             filter: 'blur(0px)',
-                            y: 0
+                            y: 0,
+                            //x: 0
                         },
                         {
                             autoAlpha: 0,
                             filter: 'blur(10px)',
                             y: 20,
+                            //x: 20,
                             ease: 'Expo.easeIn',
                             onComplete: function () {
                                 slideTitleEl.innerHTML = nextSlideTitle;
@@ -202,6 +246,7 @@ const displacementSlider = function(opts) {
                                     autoAlpha: 1,
                                     filter: 'blur(0px)',
                                     y: 0,
+                                    //x: 0,
                                 })
                             }
                         });
@@ -210,12 +255,14 @@ const displacementSlider = function(opts) {
                         {
                             autoAlpha: 1,
                             filter: 'blur(0px)',
-                            y: 0
+                            y: 0,
+                            //x: 0,
                         },
                         {
                             autoAlpha: 0,
                             filter: 'blur(10px)',
                             y: 20,
+                            //x: 20,
                             ease: 'Expo.easeIn',
                             onComplete: function () {
                                 slideStatusEl.innerHTML = nextSlideStatus;
@@ -224,6 +271,7 @@ const displacementSlider = function(opts) {
                                     autoAlpha: 1,
                                     filter: 'blur(0px)',
                                     y: 0,
+                                    //x: 0,
                                     delay: 0.1,
                                 })
                             }
@@ -271,7 +319,7 @@ imagesLoaded( document.querySelectorAll('.hero-slider-pic'), () => {
 
 if ($(window).width() > 480){
 	var sliderBegin = 1,
-		sliderEnd = 19;
+		sliderEnd = 6;
 } else {
 	var sliderBegin = 10,
 		sliderEnd = 18;
@@ -372,8 +420,9 @@ $('.hero-fullscreen-menu__cta').click(function(){
 		$('.hero-fulscreen-menu-wrap').fadeToggle()
 		// var caseNumber = $(this).data('case-number');
 		// $('.case-modal_wrap--'+caseNumber).toggle()
+		$('.hero-menu-btn').removeClass('hero-menu-btn--opened');
 		$('.callback-pop_wrap').fadeToggle()
-		$('html').toggleClass('active-pop')
+		$('html').toggleClass('active-pop');
 		
 	})
 	$('.pop_close-btn').click(function(){
@@ -420,6 +469,7 @@ $('.hero-fullscreen-menu__cta').click(function(){
 		$('.hero-fulscreen-menu-wrap').fadeToggle()
 		$('.hero-menu-hor').addClass('hero-menu-hor--active');
 		$('.hero-menu-ver').addClass('hero-menu-ver--active');
+		$(this).toggleClass('hero-menu-btn--opened');
 		// $('.hero-nav:before').css({'background-color': 'rgba(0,0,0,0)'});
 		// $('.hero-nav:after').css({'background-color': 'rgba(0,0,0,0)'});
 		// $('.hero-menu-btn:after').css({'border-color': 'rgba(0,0,0,0)'});
@@ -436,11 +486,15 @@ $('.hero-fullscreen-menu__cta').click(function(){
 	$('.hero-fullscreen-menu__link').click(function(){
 		$('.hero-fulscreen-menu-wrap').fadeOut()
 		$('html').toggleClass('active-pop')
+        $('.hero-menu-btn').toggleClass('hero-menu-btn--opened');
+
 
 	})
 
 	$('.hero-fulscreen-menu-wrap').click(function(){
 		$('.hero-fulscreen-menu-wrap').fadeOut()
+		$('.hero-menu-btn').removeClass('hero-menu-btn--opened');
+		$('.progress-ring__circle').attr('stroke', '#ffffff')
 		$('html').toggleClass('active-pop')
 
 	})
@@ -650,7 +704,15 @@ window.addEventListener("optimizedScroll", function(){
 
 
 
-
+    $(document).mouseup(function (e){
+      var modalctr = $(".callback-pop_wrap");
+      var modal = $(".callback-pop");
+      if (!modal.is(e.target) && modal.has(e.target).length === 0){
+        modalctr.fadeOut();
+      }
+      console.log(modalctr);
+      $('html').removeClass('modal-open');  
+    });
 
 
 

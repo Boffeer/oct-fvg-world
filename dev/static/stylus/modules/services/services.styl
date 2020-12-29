@@ -30,12 +30,26 @@
 			margin-bottom 42px
 
 		&__descr
-			margin-bottom 42px
+			margin-bottom 22px
+			
+			counter-reset descr 
 			// word-break: break-all;
 			// max-height 350px
-			span
-				color c-second
-				font-weight: bold
+				
+			&-item
+				position relative
+				&:before
+					counter-increment descr
+					content: counter(descr) "."
+					color c-second
+					font-weight: bold
+					font-size 20px
+					position absolute
+					left -1.1em
+					top -0.25em
+					text-align right
+					
+				
 	&-item:nth-child(even)
 		flex-direction: row-reverse;
 		.services-card
@@ -45,6 +59,8 @@
 	&-pic
 		max-height 480px
 
+.services-more
+	margin-top 30px
 
 
 
