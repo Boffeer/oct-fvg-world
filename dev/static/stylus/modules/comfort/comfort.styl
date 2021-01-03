@@ -1,191 +1,91 @@
 .comfort
 	h2
 		font-size: 40px
-	&-list
-		display flex
-		justify-content space-between
-		flex-wrap wrap
-		padding-top s2
-
-	&__pic
-		width 145px !important
-		height 178px
-		flex-align flex-end
-		background-color c-second
-		border-radius 12px 0 0 12px
-	&-item
-		max-width 582px
-		shade()
-		border-radius 16px
-		margin-bottom 62px
-		display flex
-
-		&--2
-			img
-				width 100%
-				border-radius 16px 0 0 16px
-
-		&--3
-			align-self flex-end
-			.comfort-pic
-			.comfort__pic
-				display block
-				min-width 145px
-				// width 290px !important
-				height 314px
-				// background-image url('../img/content/comfort/3.png')
-				background-size cover
-				align-self flex-end
-				background-color transparent
-
-		// &--1
-		// 	display block
-		// 	background-image url('../img/content/comfort/1-d.png')
-		// 	background-size cover
-		// 	background-position center center
-		// 	border-radius 16px 0 0 16px
-		// 	height 206px
-		// &--2
-		// 	display block
-		// 	background-image url('../img/content/comfort/justice.jpg')
-		// 	background-size cover
-		// 	background-position center center
-		// 	border-radius 16px 0 0 16px
-		// &--4
-		// 	display block
-		// 	background-image url('../img/content/comfort/eye.png')
-		// 	background-size cover
-		// 	background-position center center
-		// 	border-radius 16px 0 0 16px
-		// 	min-width 145px
-		// 	height 100%
-	&-pic
-		width 145px
-		&--3
-			position relative
-			height 296px
-			&:after
-				position absolute
-				content ''
-				display block
-				background-image url('../img/content/comfort/3-1.png')
-				width 100px
-				height 100px
-		&--4
-			height 338px
-
-	&__text
-		padding 57px 42px 57px 46px
-		background-color: c-surface
-		align-self flex-end
-		border-radius 0 16px 16px 0
-.a-comfort-money
-	position absolute
-	top -80px
-	left 100px
-.comfort-item
-	position relative
-	span
-	a
-		color c-second
-	a
-		margin-left 5px
-		font-weight 600
-
-
-.comfort-item--4
-	img
-		height 97%
-		align-self flex-end
-
-
-.comfort-me
-	background: url(../img/content/8-comfort/vald2.png), c-second
-	background-repeat: no-repeat
-	background-size cover
-	background-position center 0px
-
-
-@media(max-width 480px)
-	.comfort-me
-		background-position center 30px
-		background-size 50%
-		height 220px !important
-	.a-comfort-money
-		display none
-	.comfort
-		h2
-			font-size 22px
-			line-height 1
-		&-list
-			max-width 100%
-			padding 17px
-			flex-direction column
-		&-item
-			flex-direction column
-			width 100% !important
-			position relative
-			.comfrot-pic
-				border-radius 16px 16px 0 0
-			
-		&__text
-			transition all 0.5s
-			padding 30px 40px
-			font-size 16px
-			border-radius 16px
-
-		&__pic
-			min-width unset
-			height 100%
-			height auto
-			border-radius 12px 12px 0 0
-			left 2px
-			top 2px
-			position absolute
-
-		&-pic
-			width 100%
-
-	.comfort-item--1
-		.comfort__pic
-			display block
-			max-height 250px
-			object-fit cover
-			min-width 100%
-			position relative
-		.comfort__text
-			border-radius 0 0 16px 16px
 	
-	.comfort-item--2
-		margin-bottom 200px
-		.comfort__text
-			transform translateX(140px)
-		.comfort__pic
-			top 1px
-			height 100%
-	.comfort-item--3
-		.comfort__text
-			transform translateX(140px)
-		.comfort__pic
-			top -100%
-		
-	.comfort-item--4
-		img
-			height 100%
-			top: 0px;
-		    border-radius: 12px 0 0 12px;
-			
-		.comfort__text
-			transform translateX(133px)
-@media (max-width 1200px) and (min-width 500px)
-	.comfort-item--3 .comfort__text
-		align-self flex-end
-	.comfort-list
-		max-width 500px
-		margin 0 auto
-	.comfort-item--2 .comfort__text
-	.comfort-item--3 .comfort__text
-		padding 41px
-	.comfort-item--4 img
-		height 100%
-		
+
+.comfort-list
+	display flex
+	justify-content space-around
+	padding-top 150px
+// .comfort-list-left
+.comfort-list-right {
+	padding-top 80px
+}
+
+
+
+.comfort-item {
+	max-width 520px
+	display flex
+	justify-content center
+	align-items center
+	flex-direction column
+	padding 80px 50px 20px
+	margin-bottom 140px
+	background-color c-surface
+	border-radius 10px
+	position relative
+	shade()
+}
+
+
+.comfort-item_img {
+	position absolute
+	top -60px
+	left 0
+	right 0
+	margin 0 auto
+}
+
+.comfort-item--1 img {
+	top -100px
+}
+.comfort-item--2 img {
+	top -80px
+}
+
+.comfort-item_text {
+	margin-bottom 20px
+	text-align center
+}
+	
+.emp_main-color
+	color c-second
+
+a.emp_main-color {
+	font-weight 600
+	text-decoration underline
+}
+a.emp_main-color:hover {
+	text-decoration none
+}
+
+
+
+
+
+@media (max-width 1170px) {
+	.comfort h2 {
+		font-size 25px
+	}
+	.comfort-list {
+		flex-direction column
+	}
+	
+	.comfort-item {
+		padding-left 20px
+		padding-right 20px
+	}
+	
+	.comfort-item_text {
+		line-height 1.6
+	}
+	.comfort-list-right {
+		padding-top 0
+	}
+	.comfort-item {
+		max-width 320px
+		margin-left auto
+		margin-right auto
+	}
+}

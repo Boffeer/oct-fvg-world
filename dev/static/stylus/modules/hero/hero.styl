@@ -461,6 +461,11 @@ hero-arrow-anim = 8px
 	position absolute
 	top -500000px
 @media (max-width 480px)
+	main:after {
+		display none
+	}
+	.hero-menu-btn--opened
+		transform translateY(0)
 	.hero-fullscreen-menu__callback
 		text-align center
 	.hero-nav--hidden:before,
@@ -473,13 +478,18 @@ hero-arrow-anim = 8px
 		left 17px
 	}
 	canvas
-		top: 25%;
+		top: 60% !important;
 	.hero-slider-pic
-		height 50%
+		object-fit cover
+		object-position top
 	
 	.hero-fullscreen-menu-contacts__item
 		font-size 25px
 		text-align center
+	.hero-fullscreen-menu-contacts
+		margin-bottom 30px
+		margin-right auto !important
+		margin-left auto !important
 	.hero-img{
 		position absolute
 		top 0px
@@ -561,13 +571,13 @@ hero-arrow-anim = 8px
 		// padding-right 26px
 		padding-top 50px
 		padding-top 0
-		margin-bottom 62px
-		margin-top auto
+		// margin-bottom 62px
+		margin-top 150px
 		
 	.hero-fullscreen-menu__link
 		font-size 25px
-		padding-right 15px
-		text-align right
+		// padding-right 15px
+		text-align center
 		display block
 	
 
@@ -578,7 +588,8 @@ hero-arrow-anim = 8px
 	.hero-fullscreen-menu-bottom
 		flex-direction column
 		justify-content center
-		margin-bottom auto
+		margin-bottom 40px
+		margin-top auto
 	.hero-fullscreen-menu-socilas
 		width 100%
 		display flex

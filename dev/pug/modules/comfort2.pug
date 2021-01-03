@@ -2,23 +2,43 @@ section.comfort
 	+title('Почему со мной комфортно работать', 10, 'comfort')
 
 	.container
-		ul.comfort-list
-			li.comfort-item.comfort-item--1
-				.comfort__pic.comfort-me
-				//- img.comfort__pic(src="static/img/content/8-comfort/vald2.png", alt="")
-				p.comfort__text Ваш проект буду вести я и вся <span>ответственность</span> только <span>на</span>
-					a(href="") мне
-					| .
+		.comfort-list
+			.comfort-list-left
+				.comfort-item.comfort-item--1
+					img(src="static/img/content/8-comfort/comfort-vlad.png" alt="icon").comfort-item_img
+					p.comfort-item_text Ваш проект буду вести я и вся 
+						span.emp_main-color ответственность
+						|  только
+						span.emp_main-color  на
+						a(href=`${valdlnk}`).emp_main-color  мне
+						| .
 
-			li.comfort-item.comfort-item--2
-				img.comfort__pic(src="static/img/content/8-comfort/warranty.png", alt="")
-				p.comfort__text Все <span>материальные потери</span>, полученные по моей вине, <span>оплачиваю я</span>.
+				.comfort-item.comfort-item--2
+					img(src="static/img/content/8-comfort/comfort-graph.png" alt="icon").comfort-item_img
+					p.comfort-item_text Делая отчетность по работе каждую неделю, чтобы клиент знал, как
+						span.emp_main-color  растут
+						|  его
+						span.emp_main-color  продажи
+						|  и каковы его расходы.
 
-			li.comfort-item.comfort-item--3
-				img.a-comfort-money(data-aos="fade-up-right" src="static/img/content/8-comfort/fallingmoney.png")
-				img.comfort__pic(src="static/img/content/8-comfort/cash.png", alt="")
-				p.comfort__text Делаю отчетность по работе каждую неделю, чтобы клиент знал, как <span>растут</span> его <span>продажи и каковы его расходы.
+			.comfort-list-right
+				.comfort-item.comfort-item--3
+					img(src="static/img/content/8-comfort/comfort-calendar.png" alt="icon").comfort-item_img
+					p.comfort-item_text Я
+						span.emp_main-color  внимателен к каждому клиету
+						|  и решение о сотрудничестве принимается с двух сторон.
+					p.comfort-item_text Да, я могу отказать.
+						span.emp_main-color  Работать
+						|  приходится
+						span.emp_main-color  с клиентом
+						|  от одного месяца
+						span.emp_main-color  до нескольких лет,
+						|  поэтому не хочется портить себе и дргуим это время
 
-			li.comfort-item.comfort-item--4
-				img.comfort__pic(src="static/img/content/8-comfort/attentive.png", alt="")
-				p.comfort__text Я <span>внимателен к каждому клиенту</span> и решение о сотрудничестве принимается с двух сторон.<br><br>Да, я могу отказать. <span>Работать</span> приходится <span>с клиентом</span> от одного месяца <span>до нескольких лет</span>, поэтому не хочется портить себе и другим это время.
+				.comfort-item.comfort-item--4
+					img(src="static/img/content/8-comfort/comfort-pay.png" alt="icon").comfort-item_img
+					p.comfort-item_text Все
+						span.emp_main-color  материальные потери
+						|  , полученные по моей вине,
+						span.emp_main-color  оплачиваю я.
+				

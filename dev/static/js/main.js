@@ -319,10 +319,10 @@ imagesLoaded( document.querySelectorAll('.hero-slider-pic'), () => {
 
 if ($(window).width() > 480){
 	var sliderBegin = 1,
-		sliderEnd = 6;
+		sliderEnd = 7;
 } else {
-	var sliderBegin = 10,
-		sliderEnd = 18;
+	var sliderBegin = 8,
+		sliderEnd = 13;
 }
 
 var slidePos = sliderBegin,
@@ -550,49 +550,9 @@ const bodyTag = document.querySelector('body')
 
 
 
-let comfort4Scrolled = 0;
-let comfort3Scrolled = 0;
-let comfort2Scrolled = 0;
 // title scrollers
 window.addEventListener("optimizedScroll", function(){
-	$(window).scroll(function(){
-		// var counterContainer = $(counterContainer)
-		let counterContainer = $('.comfort-item--4'),
-				counterScroll = $(window).scrollTop() + $(window).height() - 200,
-				counterOffset = counterContainer.offset().top;
-
-		if (counterScroll > counterOffset && comfort4Scrolled == 0) {
-			$('.comfort-item--4 .comfort__text').css({'transform': 'translateX(0)'})
-			comfort4Scrolled = 1;
-		}
-	})
-		$(window).scroll(function(){
-		// var counterContainer = $(counterContainer)
-		let counterContainer = $('.comfort-item--3'),
-				counterScroll = $(window).scrollTop() + $(window).height(),
-				counterOffset = counterContainer.offset().top;
-
-		if (counterScroll > counterOffset && comfort3Scrolled == 0) {
-			$('.comfort-item--3 .comfort__text').css({'transform': 'translateX(0)'})
-			if (document.body.clientWidth < 480){
-				$('.comfort-item--3 .comfort__pic').css({'opacity': '0'})
-				$('.comfort-item--2').css({'margin-bottom': '62px'})
-			}
-			comfort3Scrolled = 1;
-		}
-	})	
-		$(window).scroll(function(){
-		// var counterContainer = $(counterContainer)
-		let counterContainer = $('.comfort-item--2'),
-				counterScroll = $(window).scrollTop() + $(window).height(),
-				counterOffset = counterContainer.offset().top;
-
-		if (counterScroll > counterOffset && comfort2Scrolled == 0) {
-			$('.comfort-item--2 .comfort__text').css({'transform': 'translateX(0)'})
-			comfort2Scrolled = 1;
-		}
-	})
-
+	
 
 
 
